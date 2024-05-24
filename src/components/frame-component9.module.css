@@ -1,0 +1,224 @@
+.frameChild {
+  height: 400px;
+  width: 1440px;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  display: none;
+  max-width: 100%;
+}
+.learningIsWhat,
+.makeOfIt {
+  margin: 0;
+  position: relative;
+  font-family: inherit;
+  z-index: 3;
+}
+.learningIsWhat {
+  align-self: stretch;
+  font-size: inherit;
+  line-height: 74px;
+  font-weight: 600;
+}
+.makeOfIt {
+  font-size: var(--font-size-11xl);
+  line-height: 110.5%;
+  font-weight: 500;
+}
+.learningIsWhatYouParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xl);
+}
+.loremIpsumHasBeen {
+  flex: 1;
+  position: relative;
+  line-height: 162.5%;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 3;
+}
+.frameGroup,
+.loremIpsumHasBeenTheIndusWrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.loremIpsumHasBeenTheIndusWrapper {
+  flex-direction: row;
+  padding: 0 var(--padding-10xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-lg);
+}
+.frameGroup {
+  flex-direction: column;
+  gap: var(--gap-mid);
+}
+.frameItem {
+  height: 44px;
+  width: 181px;
+  position: relative;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-darkslateblue);
+  display: none;
+}
+.startFreeTrail {
+  position: relative;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 128px;
+  z-index: 1;
+}
+.rectangleGroup {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-7xl) var(--padding-4xs)
+    var(--padding-8xl);
+  background-color: var(--color-darkslateblue);
+  border-radius: var(--br-10xs);
+  flex-direction: row;
+  white-space: nowrap;
+  z-index: 3;
+}
+.rectangleGroup:hover {
+  background-color: var(--color-cornflowerblue);
+}
+.frameContainer,
+.frameParent,
+.frameWrapper,
+.rectangleGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameContainer {
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.frameParent,
+.frameWrapper {
+  flex-direction: column;
+  max-width: 100%;
+}
+.frameParent {
+  align-self: stretch;
+  gap: var(--gap-15xl);
+}
+.frameWrapper {
+  flex: 1;
+  padding: var(--padding-56xl) 0 0;
+  box-sizing: border-box;
+  min-width: 426px;
+}
+.frameInner,
+.groupIcon {
+  position: absolute;
+  top: 31.2px;
+  left: 0;
+  width: 450.8px;
+  height: 447.4px;
+  z-index: 3;
+}
+.groupIcon {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 71px;
+  max-height: 100%;
+  width: 418.3px;
+  object-fit: cover;
+  z-index: 4;
+}
+.frameDiv {
+  height: 510.3px;
+  width: 489.3px;
+  position: relative;
+  min-width: 489.2999999999999px;
+  max-width: 100%;
+}
+.desktop1Inner,
+.rectangleParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.rectangleParent {
+  flex: 1;
+  background-color: var(--color-whitesmoke);
+  gap: var(--gap-61xl);
+  z-index: 2;
+}
+.desktop1Inner {
+  align-self: stretch;
+  padding: 0 0 var(--padding-75xl-7);
+  text-align: left;
+  font-size: var(--font-size-41xl);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 1225px) {
+  .frameDiv {
+    flex: 1;
+  }
+  .rectangleParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .learningIsWhat {
+    font-size: var(--font-size-29xl);
+    line-height: 59px;
+  }
+  .makeOfIt {
+    font-size: var(--font-size-5xl);
+    line-height: 27px;
+  }
+  .frameParent {
+    gap: var(--gap-mid);
+  }
+  .frameDiv,
+  .frameWrapper {
+    min-width: 100%;
+  }
+  .rectangleParent {
+    gap: var(--gap-21xl);
+    padding-left: var(--padding-33xl);
+    padding-top: var(--padding-15xl);
+    padding-right: var(--padding-36xl);
+    box-sizing: border-box;
+  }
+  .desktop1Inner {
+    padding-bottom: var(--padding-43xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .learningIsWhat {
+    font-size: var(--font-size-17xl);
+    line-height: 44px;
+  }
+  .makeOfIt {
+    font-size: var(--font-size-lg);
+    line-height: 20px;
+  }
+  .frameWrapper {
+    padding-top: var(--padding-30xl);
+    box-sizing: border-box;
+  }
+  .rectangleParent {
+    gap: var(--gap-xl);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

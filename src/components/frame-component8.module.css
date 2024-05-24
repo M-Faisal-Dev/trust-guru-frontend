@@ -1,0 +1,39 @@
+.sectionIcon {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border-radius: var(--br-11xl);
+}
+.classes,
+.smoothVirtualLive {
+  margin: 0;
+}
+.sectionHeadingContainer {
+  position: relative;
+  line-height: 26px;
+  font-weight: 600;
+}
+.sectionHeading4SmoothVWrapper,
+.sectionParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sectionHeading4SmoothVWrapper {
+  flex-direction: column;
+  padding: var(--padding-9xs) 0 0;
+}
+.sectionParent {
+  flex-direction: row;
+  gap: var(--gap-lgi-4);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 450px) {
+  .sectionHeadingContainer {
+    font-size: var(--font-size-base);
+    line-height: 21px;
+  }
+}
