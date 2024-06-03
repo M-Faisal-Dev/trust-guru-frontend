@@ -17,8 +17,8 @@ const config: Config = {
     extend: {
       colors: {
       // fv color 
-      gray: "#D9D9D9",
-      blue: "#002D4F",
+  
+      blue: "#2F5AAE",
       gold: "#E7AD01",
       offwhite: "#E0E0E0",
       "gold-800": "#8D7C3B",
@@ -40,8 +40,7 @@ const config: Config = {
         secondary: "#80CAEE",
         stroke: "#E2E8F0",
         graydark: "#333A48",
-        "gray-2": "#F7F9FC",
-        "gray-3": "#FAFAFA",
+       
         whiten: "#F1F5F9",
         whiter: "#F5F7FD",
         boxdark: "#24303F",
