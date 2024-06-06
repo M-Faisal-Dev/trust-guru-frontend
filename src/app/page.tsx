@@ -9,6 +9,14 @@ import Cources4 from "@/components/frame-component1";
 
 
 
+import Teacher from "@/components/frame-component5";
+
+
+
+
+
+
+
 
 
 
@@ -18,6 +26,7 @@ export default function Home() {
 
     <Banner/>
     <Main/>
+    <Teacher/>
     <Cources/>
     <Cources1/>
     <Cources3/>

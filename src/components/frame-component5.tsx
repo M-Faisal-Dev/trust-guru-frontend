@@ -27,67 +27,70 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
             </div>
           </div>
         </div>
-        <div className={styles.frameParent}>
-          <div className={styles.frameContainer}>
-            <div className={styles.frameGroup}>
-              <div className={styles.sectionParent}>
-                <div className={styles.section} />
-                <img
-                  className={styles.sectionLinkInstructor01}
-                  loading="lazy"
-                  alt=""
-                  src="/section--link--instructor01png@2x.png"
-                />
-              </div>
-              <div className={styles.sectionGroup}>
-                <div className={styles.section1} />
-                <img
-                  className={styles.sectionLinkInstructor03}
-                  loading="lazy"
-                  alt=""
-                  src="/section--link--instructor03png@2x.png"
-                />
-              </div>
-            </div>
-          </div>
-          <div className={styles.frameDiv}>
-            <FrameComponent6
-              sectionHeading2LinkMarkJ="Mark Jukarberg"
-              sectionUXDesignLead="UX Design Lead"
-              sectionLinkInstructor02pn="/section--link--instructor02png@2x.png"
-            />
-            <FrameComponent6
-              sectionHeading2LinkMarkJ="William Hope"
-              sectionUXDesignLead="Digital Marketing"
-              sectionLinkInstructor02pn="/section--link--instructor04png@2x.png"
-              propGap="57px"
-              propHeight="unset"
-              propMinWidth="154px"
-              propPadding="var(--padding-42xl) 0px 0px"
-              propDisplay="unset"
-              propMinWidth1="unset"
-              propTop="calc(50% - 101px)"
-            />
-          </div>
-          <div className={styles.frameWrapper1}>
-            <div className={styles.frameParent1}>
-              <div className={styles.sectionHeading2LinkOParent}>
-                <div className={styles.sectionHeading1}>Olivia Mia</div>
-                <div className={styles.sectionWeb}>Web Design</div>
-                <div className={styles.section48Container}>
-                  <span>(192 TRUST POINTS)</span>
-                </div>
-              </div>
-              <div className={styles.sectionHeading2LinkSParent}>
-                <div className={styles.sectionHeading2}>Sophia Ava</div>
-                <div className={styles.sectionWeb1}>Web Development</div>
-                <div className={styles.section48Container1}>
-                  <span>(192 TRUST POINTS)</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      
+
+
+<div className="flex items-center justify-center text-center w-[61%]">
+  <div className="flex flex-col p-2 m-2 w-full">
+
+
+    <div className="flex items-center justify-between md:flex-row flex-col space-x-4  p-2">
+   
+      <div className="flex items-center space-x-2 px-6 py-2  md:w-2/4 w-full  ">
+        <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
+          <img src="/section--link--instructor01png@2x.png" alt = "img" />
         </div>
+        <div className="flex-col">
+          <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+          <div className="styles.sectionWeb">UX Design Lead </div>
+          <div className={styles.section48Container}>
+                  <span>(192 TRUST POINTS)</span>
+                </div>
+        </div>
+      </div>
+      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+        <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
+          <img src="https://source.unsplash.com/300x300/?girl" alt = "img" />
+        </div>
+        <div className="flex-col">
+          <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+          <div className="styles.sectionWeb">UX Design Lead </div>
+          <div className={styles.section48Container}>
+                  <span>(192 TRUST POINTS)</span>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div className="flex space-x-4  p-2 items-center justify-center md:flex-row flex-col ">
+    
+      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+        <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
+          <img src="https://source.unsplash.com/300x300/?girl,woman" alt = "img" />
+        </div>
+        <div className="flex-col">
+          <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+          <div className="styles.sectionWeb">UX Design Lead </div>
+          <div className={styles.section48Container}>
+                  <span>(192 TRUST POINTS)</span>
+                </div>
+        </div>
+      </div>
+      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+        <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
+          <img src="https://source.unsplash.com/300x300/?woman" alt = "img" />
+        </div>
+        <div className="flex-col">
+          <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+          <div className="styles.sectionWeb">UX Design Lead </div>
+          <div className={styles.section48Container}>
+                  <span>(192 TRUST POINTS)</span>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );

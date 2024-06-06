@@ -5,7 +5,10 @@ import React, { useState } from 'react';
 import { MdOutlineFileUpload } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-
+import axios from "axios"
+import {routes} from "@/libs/api"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +16,7 @@ function LoginPage() {
     password: '',
     rememberMe: false
   });
+  
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,11 +26,21 @@ function LoginPage() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send formData to your API
-    console.log(formData);
-  };
+ const instance = axios.create({
+  withCredentials: true, // Include cookies in requests
+});
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("hello this is Faisal");
+
+  try {
+    const res = await instance.post(routes.login, formData);
+    console.log('Response data:', res.data);
+  } catch (error) {
+    toast.error("Login failed: Please check you credentials")
+  }
+};
 
 
 
@@ -81,6 +95,7 @@ const handleInputChange = (event) => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
    
+{/* popup */}
 
    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-11/12 max-w-3xl p-6 relative">
@@ -156,7 +171,7 @@ const handleInputChange = (event) => {
       </label>
 
     {
-      openDropDown === true ? ( < IoIosArrowUp className="text-xl" onClick={()=> setOpenDropDown(false)}/>):(<IoIosArrowDown  className="text-xl" onClick={()=> setOpenDropDown(true)}/>)
+      openDropDown === true ? ( < IoIosArrowUp className="text-xl mr-5" onClick={()=> setOpenDropDown(false)}/>):(<IoIosArrowDown  className="text-xl mr-5" onClick={()=> setOpenDropDown(true)}/>)
       }
       </div>
 { openDropDown &&
@@ -206,7 +221,7 @@ const handleInputChange = (event) => {
       </label>
 
     {
-      openDrop2nd === true ? ( < IoIosArrowUp className="text-xl" onClick={()=> setOpenDrop2nd(false)}/>):(<IoIosArrowDown  className="text-xl" onClick={()=> setOpenDrop2nd(true)}/>)
+      openDrop2nd === true ? ( < IoIosArrowUp className="text-xl mr-5" onClick={()=> setOpenDrop2nd(false)}/>):(<IoIosArrowDown  className="text-xl mr-5" onClick={()=> setOpenDrop2nd(true)}/>)
       }
       </div>
 { openDrop2nd &&

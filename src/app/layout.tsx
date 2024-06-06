@@ -3,6 +3,8 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from 'react-toastify';
+
 
 
 
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body className={openSans.className}>
       
       <Navbar/>
+      <ToastContainer/>
       {children}
       <Footer/>
       </body>
