@@ -14,9 +14,9 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>
           <div className={styles.loremIpsumHasBeenTheIndusParent}>
             <div className={styles.loremIpsumHasBeen}>
-              Lorem Ipsum has been the industry's standard dummy text ever since
+              Lorem Ipsum has been the industrys standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type ...
+              scrambled it to make a type...
             </div>
             <div className={styles.listItem4637thAveNyParent}>
               <div className={styles.listItem}>463 7th Ave, NY 10018, USA</div>
@@ -58,7 +58,7 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
             </div>
           </div>
           <div className={styles.loremIpsumHasBeen1}>
-            Lorem Ipsum has been the industry's standard dummy text ever since
+            Lorem Ipsum has been the industrys standard dummy text ever since
             the 1500s,
           </div>
           <div className={styles.frameContainer}>

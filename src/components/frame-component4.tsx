@@ -16,7 +16,7 @@ const FrameComponent4: NextPage<FrameComponent4Type> = ({ className = "" }) => {
             </div>
             <div className={styles.heading2ExploreOurWorldParent}>
               <h1 className={styles.heading2}>
-                Explore Our World's Best Courses
+                Explore Our Worlds Best Courses
               </h1>
               <div className={styles.whenKnownPrinterTookAGallWrapper}>
                 <div className={styles.whenKnownPrinter}>

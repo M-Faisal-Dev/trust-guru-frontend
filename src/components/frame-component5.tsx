@@ -21,7 +21,7 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
               </h2>
             </div>
             <div className={styles.sectionWhen}>
-              Lorem Ipsum has been the industry's standard dummy text ever since
+              Lorem Ipsum has been the industrys standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type ...
             </div>

@@ -12,7 +12,7 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
         <div className={styles.frameWrapper}>
           <div className={styles.sectionHeading2ThousandParent}>
             <h1 className={styles.sectionHeading}>
-              TYG's purpose is to allow truly competent people to earn money by
+              TYGs purpose is to allow truly competent people to earn money by
               helping others.
             </h1>
             <div className={styles.frameGroup}>

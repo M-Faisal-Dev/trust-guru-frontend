@@ -280,7 +280,7 @@ const handleInputChange = (event) => {
                 Login
               </h1>
               <p className="text-base font-light text-center text-gray-600">
-                Don't have an account? <a href="#" className="font-medium text-blue hover:underline cursor-pointer">Register here</a>
+                Dont have an account? <a href="#" className="font-medium text-blue hover:underline cursor-pointer">Register here</a>
               </p>
 
               <form className="space-y-2 md:space-y-4" onSubmit={handleSubmit}>

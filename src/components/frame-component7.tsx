@@ -30,7 +30,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
               </span>
             </h1>
             <div className={styles.sectionEdhen}>
-              Lorem Ipsum has been the industry's standard dummy text ever since
+              Lorem Ipsum has been the industrys standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type ...
             </div>
@@ -51,7 +51,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
             <div className={styles.frameParent1}>
               <div className={styles.sectionEdhenAnUnknownPriParent}>
                 <div className={styles.sectionEdhen1}>
-                  Lorem Ipsum has been the industry's standard dummy text ever
+                  Lorem Ipsum has been the industrys standard dummy text ever
                   since the 1500s, when an unknown printer took a galley of type
                   and scrambled it to make a type ...
                 </div>
@@ -61,7 +61,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
                 </button>
               </div>
               <div className={styles.sectionEdhen2}>
-                Lorem Ipsum has been the industry's standard dummy text ever
+                Lorem Ipsum has been the industrys standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type ...
               </div>
