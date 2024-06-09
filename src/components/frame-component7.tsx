@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import FrameComponent8 from "./frame-component8";
 import styles from "./frame-component7.module.css";
+import Link from "next/link"
 
 export type FrameComponent7Type = {
   className?: string;
@@ -57,7 +58,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
                 </div>
                 <button className={styles.rectangleParent}>
                   <div className={styles.frameItem} />
-                  <div className={styles.quickJoinNow}>Quick Join Now</div>
+                  <Link href="/login" className={styles.quickJoinNow}>Quick Join Now</Link>
                 </button>
               </div>
               <div className={styles.sectionEdhen2}>
