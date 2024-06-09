@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import styles from "./frame-component9.module.css";
+import Link from "next/link"
 
 export type FrameComponent9Type = {
   className?: string;
@@ -30,7 +31,7 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
             <div className={styles.frameContainer}>
               <button className={styles.rectangleGroup}>
                 <div className={styles.frameItem} />
-                <div className={styles.startFreeTrail}>Start Free Trail</div>
+                <Link href = "/courses" className={styles.startFreeTrail}>Start Your Journey</Link>
               </button>
             </div>
           </div>

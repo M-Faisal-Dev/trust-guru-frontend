@@ -9,6 +9,9 @@ import axios from "axios"
 import {routes} from "@/libs/api"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '@/Context/AuthContext';
+import {handleProfileImageUpload} from "@/libs/uploadAsset"
+import Link from "next/link"
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -16,7 +19,8 @@ function LoginPage() {
     password: '',
     rememberMe: false
   });
-  
+  const [popup, setPopup] = useState(false);
+  const { isAuthenticated, login, logout, userToken } = useAuth();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -36,14 +40,12 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await instance.post(routes.login, formData);
-    console.log('Response data:', res.data);
+    login(res.data.userType)
+    setPopup(true)
   } catch (error) {
     toast.error("Login failed: Please check you credentials")
   }
 };
-
-
-
 
 
 
@@ -54,41 +56,74 @@ const [image, setImage] = useState(null);
 
 const handleImageUpload = (event) => {
   const uploadedImage = event.target.files[0];
-  const reader = new FileReader();
-
-  reader.onloadend = () => {
-    setImage(reader.result);
-  };
-
-  if (uploadedImage) {
-    reader.readAsDataURL(uploadedImage);
-  }
+  setImage(uploadedImage)
 };
 
 
 
 const [selectedOptions, setSelectedOptions] = useState([]);
-const [customCondition, setCustomCondition] = useState('');
+const [selectedLanguageOptions, setSelectedLanguageOptions] = useState([]);
 const [openDropDown, setOpenDropDown] = useState(false)
 const [openDrop2nd, setOpenDrop2nd] = useState(false)
 
+
+const courseConditions = [
+  { value: 'condition1', label: 'Condition 1' },
+  { value: 'condition2', label: 'Condition 2' },
+  { value: 'other', label: 'Other' },
+];
+
+const languageConditions = [
+  { value: 'english', label: 'English' },
+  { value: 'italian', label: 'Italian' },
+];
+
+
 const handleCheckboxChange = (value) => {
-  if (selectedOptions.includes(value)) {
-    setSelectedOptions(selectedOptions.filter(option => option !== value));
-  } else {
-    setSelectedOptions([...selectedOptions, value]);
-  }
+  setSelectedOptions((prevSelectedOptions) =>
+    prevSelectedOptions.includes(value)
+      ? prevSelectedOptions.filter((option) => option !== value)
+      : [...prevSelectedOptions, value]
+  );
+};
 
-  // Reset custom condition when an option other than "Other" is selected
-  if (!selectedOptions.includes('other')) {
-    setCustomCondition('');
+const handleLanguageCheckboxChange = (value) => {
+  setSelectedLanguageOptions((prevSelectedOptions) =>
+    prevSelectedOptions.includes(value)
+      ? prevSelectedOptions.filter((option) => option !== value)
+      : [...prevSelectedOptions, value]
+  );
+};
+
+
+const handleSubmitProfile = async (e) => {
+  e.preventDefault();
+
+  const getResponse = await handleProfileImageUpload(image)
+  console.log(getResponse?.image?.[0])
+
+  const requestData = {
+    courseOptions: selectedOptions,
+    languageOptions: selectedLanguageOptions,
+    profileImgUrl: getResponse?.image?.[0]
+  };
+
+  try {
+    const response = await axios.put(routes.updateUserProfile, requestData, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userToken}`,  // Include token in headers
+      },
+    });
+    setPopup(false)
+    console.log(response.data)
+  } catch (error) {
+    console.error('Error uploading data:', error);
+    // Handle error (e.g., show error message)
   }
 };
 
-const handleInputChange = (event) => {
-  const { value } = event.target;
-  setCustomCondition(value);
-};
+
 
 
 
@@ -97,7 +132,7 @@ const handleInputChange = (event) => {
    
 {/* popup */}
 
-   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+{ popup &&  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-11/12 max-w-3xl p-6 relative">
         <button 
        
@@ -110,7 +145,7 @@ const handleInputChange = (event) => {
 <hr  className="border w-full right-0 opacity-50 border-blue mb-3"/>
 
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmitProfile}>
           <div className="flex justify-center space-x-7 items-center">
 
 
@@ -124,7 +159,7 @@ const handleInputChange = (event) => {
       {image ? (
         <img
           className="absolute inset-0 w-full h-full object-cover"
-          src={image}
+          src={URL.createObjectURL(image)}
           alt="Uploaded profile"
         />
       ) : (
@@ -174,38 +209,22 @@ const handleInputChange = (event) => {
       openDropDown === true ? ( < IoIosArrowUp className="text-xl mr-5" onClick={()=> setOpenDropDown(false)}/>):(<IoIosArrowDown  className="text-xl mr-5" onClick={()=> setOpenDropDown(true)}/>)
       }
       </div>
-{ openDropDown &&
-      <div className="mt-2 space-y-2 space-x-3 duration-500 transition-all ease-in-out">
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="condition1"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('condition1')}
-          />
-          <span className="ml-2 text-gray-700">Condition 1</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="condition2"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('condition2')}
-          />
-          <span className="ml-2 text-gray-700">Condition 2</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="other"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('other')}
-          />
-          <span className="ml-2 text-gray-700">Other</span>
-        </label>
-      
-      </div>
-}
+      {openDropDown && (
+                  <div className="mt-2 space-y-2 space-x-3 duration-500 transition-all ease-in-out">
+                    {courseConditions.map((condition) => (
+                      <label key={condition.value} className="inline-flex items-center">
+                        <input
+                          type="checkbox"
+                          value={condition.value}
+                          className="form-checkbox h-4 w-4 text-blue-600"
+                          onChange={() => handleCheckboxChange(condition.value)}
+                          checked={selectedOptions.includes(condition.value)}
+                        />
+                        <span className="ml-2 text-gray-700">{condition.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                )}
 
 
 
@@ -217,46 +236,29 @@ const handleInputChange = (event) => {
 
          
       <label className="block text-lg font-medium py-2 px-4 w-full text-gray-700">
-      Course about business 
+      Language
       </label>
 
     {
       openDrop2nd === true ? ( < IoIosArrowUp className="text-xl mr-5" onClick={()=> setOpenDrop2nd(false)}/>):(<IoIosArrowDown  className="text-xl mr-5" onClick={()=> setOpenDrop2nd(true)}/>)
       }
       </div>
-{ openDrop2nd &&
-      <div className="mt-2 space-y-2 space-x-3 duration-500 transition-all ease-in-out">
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="condition1"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('condition1')}
-          />
-          <span className="ml-2 text-gray-700">Condition 1</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="condition2"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('condition2')}
-          />
-          <span className="ml-2 text-gray-700">Condition 2</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            value="other"
-            className="form-checkbox h-4 w-4 text-blue-600"
-            onChange={() => handleCheckboxChange('other')}
-          />
-          <span className="ml-2 text-gray-700">Other</span>
-        </label>
-      
-      </div>
-}
-
+      {openDrop2nd && (
+                  <div className="mt-2 space-y-2 space-x-3 duration-500 transition-all ease-in-out">
+                    {languageConditions.map((condition) => (
+                      <label key={condition.value} className="inline-flex items-center">
+                        <input
+                          type="checkbox"
+                          value={condition.value}
+                          className="form-checkbox h-4 w-4 text-blue-600"
+                          onChange={() => handleLanguageCheckboxChange(condition.value)}
+                          checked={selectedLanguageOptions.includes(condition.value)}
+                        />
+                        <span className="ml-2 text-gray-700">{condition.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                )}
 
 
 
@@ -277,7 +279,7 @@ const handleInputChange = (event) => {
           </div>
         </form>
       </div>
-    </div>
+    </div>}
    
    
    
@@ -295,7 +297,7 @@ const handleInputChange = (event) => {
                 Login
               </h1>
               <p className="text-base font-light text-center text-gray-600">
-                Dont have an account? <a href="#" className="font-medium text-blue hover:underline cursor-pointer">Register here</a>
+                Dont have an account? <Link href="/register" className="font-medium text-blue hover:underline cursor-pointer">Register here</Link>
               </p>
 
               <form className="space-y-2 md:space-y-4" onSubmit={handleSubmit}>

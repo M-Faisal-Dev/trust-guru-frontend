@@ -4,12 +4,29 @@ import type { NextPage } from 'next';
 import styles from './Navbar.module.css';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { CgClose } from "react-icons/cg";
+import { useAuth } from '@/Context/AuthContext';
+import {routes} from "@/libs/api"
+
+
+import axios from 'axios';
+
 export type NavbarType = {
   className?: string;
 };
+import Link from "next/link"
 
 const Navbar: NextPage<NavbarType> = ({ className = '' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isAuthenticated, userType, logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await axios.get(routes.logout, { withCredentials: true });
+      // Perform any additional cleanup actions, such as redirecting or clearing local state
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
 
   return (
     <header className={`${styles.rectangleParent} ${className}`}>
@@ -17,10 +34,10 @@ const Navbar: NextPage<NavbarType> = ({ className = '' }) => {
       <h2 className={styles.trustyourguru}>TrustYourGuru</h2>
       <nav className={`${styles.frameWrapper} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <div className={styles.homeParent}>
-          <div className={styles.home}>Home</div>
-          <div className={styles.aboutUs}>About Us</div>
-          <div className={styles.courses}>Courses</div>
-          <div className={styles.pages}>Pages</div>
+          <Link href="/" className={styles.aboutUs}>Home</Link>
+          <Link href="/about-us"  className={styles.aboutUs}>About Us</Link>
+          <Link href="/courses"  className={styles.courses}>Courses</Link>
+          <Link href="/instructor" className={styles.pages}>Instructor</Link>
         </div>
       </nav>
       <div className={styles.frameContainer}>
@@ -50,7 +67,13 @@ const Navbar: NextPage<NavbarType> = ({ className = '' }) => {
         
           <button className={`${styles.rectangleGroup} ${isMenuOpen ? styles.menuOpen : ''}`}>
             <div className={styles.frameItem} />
-            <div className={styles.logIn}>Log In</div>
+
+           { isAuthenticated ? ( 
+              
+  <button onClick={handleLogout} className={styles.logIn}>Logout</button>
+ ) : (   <Link href="/login" className={styles.logIn}>Log In</Link>
+ )}
+
           </button>
         </div>
       </div>

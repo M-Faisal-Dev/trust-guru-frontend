@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from 'react';
+import Link from "next/link";
 
 
 function Page() {
@@ -45,7 +46,7 @@ function Page() {
                Register
               </h1>
               <p className="text-base font-light text-center text-gray-600">
-                  Already have an account? <a href="#" className="font-medium text-blue hover:underline dark:text-primary-500 cursor-pointer">Login here</a>
+                  Already have an account? <Link href="/login" className="font-medium text-blue hover:underline dark:text-primary-500 cursor-pointer">Login here</Link>
                 </p>
 
               <form className="space-y-2 md:space-y-4" action="#" onSubmit={handleSubmit}>

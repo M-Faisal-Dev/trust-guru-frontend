@@ -1,0 +1,51 @@
+// CardList.jsx
+import React from 'react';
+import CardComponent from './CardComponent';
+
+
+const cardData = [
+    {
+        image: "/cardone.png",
+        develop: 'Development',
+        drop: 'Drop Shipping',
+        author: 'David Millar',
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type...",
+        price: '15.00',
+    },
+    {
+        image: "/cardtwo.png",
+        develop: 'Design',
+        drop: 'Yoga',
+        author: 'David Millar',
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type...",
+        price: '15.00',
+    },
+    {
+        image: "/cardthree.png",
+        develop: 'Marketing',
+        drop: 'Digital Marketing',
+        author: 'David Millar',
+        description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type...",
+        price: '15.00',
+    },
+];
+
+const CardList = () => {
+    return (
+        <div className='grid md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 items-center justify-center xl:gap-[27px] lg:gap-4 md:gap-2 xxs:gap-3 mt-5'>
+            {cardData.map((card, index) => (
+                <CardComponent
+                    key={index}
+                    image={card.image}
+                    develop={card.develop}
+                    drop={card.drop}
+                    author={card.author}
+                    description={card.description}
+                    price={card.price}
+                />
+            ))}
+        </div>
+    );
+};
+
+export default CardList;

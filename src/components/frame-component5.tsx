@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import FrameComponent6 from "./frame-component6";
 import styles from "./frame-component5.module.css";
+import Link from "next/link"
 
 export type FrameComponent5Type = {
   className?: string;
@@ -36,7 +37,7 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
 
     <div className="flex items-center justify-between md:flex-row flex-col space-x-4  p-2">
    
-      <div className="flex items-center space-x-2 px-6 py-2  md:w-2/4 w-full  ">
+      <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 md:w-2/4 w-full  ">
         <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
           <img src="/section--link--instructor01png@2x.png" alt = "img" />
         </div>
@@ -47,8 +48,8 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
                   <span>(192 TRUST POINTS)</span>
                 </div>
         </div>
-      </div>
-      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+      </Link>
+      <Link href="/instructor/details" className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
         <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
           <img src="https://source.unsplash.com/300x300/?girl" alt = "img" />
         </div>
@@ -59,11 +60,11 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
                   <span>(192 TRUST POINTS)</span>
                 </div>
         </div>
-      </div>
+      </Link>
     </div>
     <div className="flex space-x-4  p-2 items-center justify-center md:flex-row flex-col ">
     
-      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+      <Link href="/instructor/details" className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
         <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
           <img src="https://source.unsplash.com/300x300/?girl,woman" alt = "img" />
         </div>
@@ -74,8 +75,8 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
                   <span>(192 TRUST POINTS)</span>
                 </div>
         </div>
-      </div>
-      <div className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
+      </Link>
+      <Link href="/instructor/details" className="flex items-center  space-x-2 px-6 py-2 md:w-2/4 w-full  ">
         <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
           <img src="https://source.unsplash.com/300x300/?woman" alt = "img" />
         </div>
@@ -86,7 +87,7 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
                   <span>(192 TRUST POINTS)</span>
                 </div>
         </div>
-      </div>
+      </Link>
     </div>
   </div>
 </div>

@@ -8,6 +8,8 @@ export const routes = {
     // car listing api 
     register: `${api}register`,
     login: `${api}login`,
+    logout: `${api}logout`,
+    updateUserProfile: `${api}updateProfile`,
 
 
     product: `${api}product`,

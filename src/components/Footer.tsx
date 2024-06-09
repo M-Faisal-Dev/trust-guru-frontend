@@ -44,9 +44,9 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
             <div className={styles.listItemLinkContactUParent}>
               <div className={styles.listItem7}>Contact Us</div>
               <div className={styles.listItem8}>Become Teacher</div>
-              <div className={styles.listItem9}>Blog</div>
+            
               <div className={styles.listItem10}>Instructor</div>
-              <div className={styles.listItem11}>Events</div>
+  
             </div>
           </div>
         </div>
