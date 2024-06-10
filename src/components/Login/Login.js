@@ -12,15 +12,24 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '@/Context/AuthContext';
 import {handleProfileImageUpload} from "@/libs/uploadAsset"
 import Link from "next/link"
+import { useRouter } from 'next/navigation'
 
 function LoginPage() {
+  const router = useRouter()
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     rememberMe: false
   });
+
+  const [token, setToken] = useState(""); 
+
+
+
   const [popup, setPopup] = useState(false);
-  const { isAuthenticated, login, logout, userToken } = useAuth();
+  const { isAuthenticated, login, logout, userToken, getRefreshToken } = useAuth();
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -30,9 +39,15 @@ function LoginPage() {
     });
   };
 
+
+
+
  const instance = axios.create({
   withCredentials: true, // Include cookies in requests
 });
+
+
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -40,13 +55,28 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await instance.post(routes.login, formData);
-    login(res.data.userType)
-    setPopup(true)
+    console.log(res.data.userType )
+if(res.data.userType === "Teacher"){
+  router.push("/view-profile")
+  login(res.data.userType)
+
+} else{
+  const getToken = res.data.token
+  login(res.data.userType)
+  setToken(getToken);
+  setPopup(true)
+
+}
+
+
   } catch (error) {
     toast.error("Login failed: Please check you credentials")
   }
 };
 
+
+
+console.log(token, "this is token")
 
 
 // upload Imgs 
@@ -99,6 +129,10 @@ const handleLanguageCheckboxChange = (value) => {
 const handleSubmitProfile = async (e) => {
   e.preventDefault();
 
+  const Token = getRefreshToken()
+  console.log(Token, "this is token")
+
+
   const getResponse = await handleProfileImageUpload(image)
   console.log(getResponse?.image?.[0])
 
@@ -108,15 +142,20 @@ const handleSubmitProfile = async (e) => {
     profileImgUrl: getResponse?.image?.[0]
   };
 
+
   try {
-    const response = await axios.put(routes.updateUserProfile, requestData, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userToken}`,  // Include token in headers
-      },
-    });
-    setPopup(false)
-    console.log(response.data)
+    
+      const response = await axios.put(routes.updateUserProfile, requestData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,  // Include token in headers
+        },
+      });
+      setPopup(false)
+      router.push("/instructor")
+ 
+    
+   
   } catch (error) {
     console.error('Error uploading data:', error);
     // Handle error (e.g., show error message)

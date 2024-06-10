@@ -3,17 +3,19 @@
 import Image from "next/image";
 import React, { useState } from 'react';
 import Link from "next/link";
-
-
+import {routes} from "@/libs/api"
+import axios from "axios";
+import { useRouter } from 'next/navigation'
 function Page() {
   const [formData, setFormData] = useState({
     fullName: "",
-    phoneNumber: "",
+    mobile: "",
     email: '',
     userType: '',
     password: '',
     confirmPassword: ''
   });
+  const router = useRouter()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +25,16 @@ function Page() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can handle form submission, e.g., send formData to your API
-    console.log(formData);
+    try {
+      // Send a POST request to your API endpoint with formData
+      const response = await axios.post(routes.register, formData);
+      router.push("/login")
+    } catch (error) {
+      // Handle errors, e.g., show an error message
+      console.error('Form submission failed:', error);
+    }
   };
 
   return (
@@ -59,8 +67,8 @@ function Page() {
             
 
                 <div>
-                  <input type="tel" name="phoneNumber" id="number" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5 " placeholder="Phone Number"
-                  value={formData.phoneNumber}
+                  <input type="tel" name="mobile" id="number" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5 " placeholder="Phone Number"
+                  value={formData.mobile}
                   onChange={handleChange}
                      required />
                 </div>
@@ -92,8 +100,8 @@ function Page() {
                       required />
                 </div>
                 <div>
-                  <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5"
-                     value={formData.confirmPassword}
+                  <input type="password" name="confirmPassword" id="confirm-password" placeholder="Confirm password" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5"
+                    value={formData.confirmPassword}
                     onChange={handleChange}
                      required />
                 </div>

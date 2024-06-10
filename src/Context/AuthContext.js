@@ -39,8 +39,13 @@ export const AuthProvider = ({ children }) => {
     setUserType(null);
   };
 
+  const getRefreshToken = () => {
+    const token = Cookies.get('refreshToken');
+   return token
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, userType, login, logout, userToken }}>
+    <AuthContext.Provider value={{ isAuthenticated, userType, login, logout, userToken, getRefreshToken }}>
       {children}
     </AuthContext.Provider>
   );

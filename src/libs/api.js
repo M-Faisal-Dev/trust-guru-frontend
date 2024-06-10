@@ -1,4 +1,6 @@
-const root = "http://localhost:4000"
+// const root = "http://localhost:4000"
+const root = "http://194.164.76.83"
+
 
 
 export const api = `${root}/api/`
