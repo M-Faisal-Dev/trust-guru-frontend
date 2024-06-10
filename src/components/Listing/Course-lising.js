@@ -179,7 +179,7 @@ function Courselising() {
                   />
 
                   <span className="text-[17px] text-dark-grey font-normal pt-[18px]">
-                    Add Pictures
+                    Add Thumbnail Pictures
                   </span>
                 </label>
               </div>
@@ -240,7 +240,7 @@ function Courselising() {
                   />
 
                   <span className="text-[17px] text-dark-grey font-normal pt-[18px]">
-                    Add Pictures
+                    Add Cover Pictures
                   </span>
                 </label>
               </div>
