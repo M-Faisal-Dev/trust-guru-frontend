@@ -30,7 +30,8 @@ function Page() {
     try {
       // Send a POST request to your API endpoint with formData
       const response = await axios.post(routes.register, formData);
-      router.push("/login")
+      console.log(response.data)
+      // router.push("/login")
     } catch (error) {
       // Handle errors, e.g., show an error message
       console.error('Form submission failed:', error);

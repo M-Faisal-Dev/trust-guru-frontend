@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Input = ({placeholder}) => {
+const Input = ({ name, value, onChange, placeholder }) => {
   return (
-    <input className='shadow-neons bg-whitee rounded h-[50px] xl:max-w-[572px]   w-full px-[30px] ' 
-    type="text" placeholder={placeholder} />
-  )
-}
+    <input
+      className='shadow-neons bg-whitee rounded h-[50px] xl:max-w-[572px] w-full px-[30px]'
+      type="text"
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+    />
+  );
+};
 
-export default Input
+export default Input;
