@@ -55,12 +55,13 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await instance.post(routes.login, formData);
-    setRefreshToken(res.data.token)
+    
+    const getuserToken = res.data.token
+    login(res.data.userType)
+    setRefreshToken(getuserToken)
 if(res.data.userType === "Teacher"){
-  router.push("/view-profile")
   login(res.data.userType)
- 
-
+  router.push("/view-profile")
 } else{
   const getToken = res.data.token
   login(res.data.userType)
@@ -71,6 +72,7 @@ if(res.data.userType === "Teacher"){
 
 
   } catch (error) {
+    console.log(error)
     toast.error("Login failed: Please check you credentials")
   }
 };

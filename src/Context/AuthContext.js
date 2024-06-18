@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const setRefreshToken = (refreshToken) => {
-    Cookies.set('refreshToken', type);
+    Cookies.set('refreshToken', refreshToken);
   };
 
   const logout = () => {
