@@ -11,7 +11,7 @@ const FrameComponent3: NextPage<FrameComponent3Type> = ({ className = "" }) => {
   const cards = [1, 2, 3, 4];
   return (
    <section className="text-gray-600 body-font">
-  <div className="container px-5 py-10 mx-auto">
+  <div className="max-w-7xl px-5 py-10 mx-auto">
   <div  className="flex flex-wrap -m-4">
     
     {cards.map((card, index) => (

@@ -1,8 +1,8 @@
-import React from 'react'
+import Link from "next/link"
 
 const Anchor = (props) => {
   return (
-    <a href="#" className="hover:text-blackk ">{props.text}</a>
+    <Link href={props.link} className="hover:text-blackk ">{props.text}</Link>
   )
 }
 

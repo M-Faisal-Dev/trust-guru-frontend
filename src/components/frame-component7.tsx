@@ -7,7 +7,23 @@ export type FrameComponent7Type = {
   className?: string;
 };
 
+
 const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
+
+  const data = {
+    heading: "VISIBILITÀ SENZA INVESTIRE IN PUBBLICITÀ.",
+    description: "Ogni coach è inserito all’interno di una classifica meritocratica! ",
+    features: [
+      { section: "/section.svg", title: "PERCORSI INDIVIDUALI ONLINE", classes: "Classes" },
+      { section: "/section-1.svg", title: "IL 96.2% DEGLI STUDENTI RIACQUISTEREBBE!", classes: "Complete" },
+    ],
+    quickJoinText: "REGISTRATI SUBITO!",
+    sectionContent1: "Percorsi one to one per creare una relazione trasparente e produttiva tra coach e studente.",
+    sectionContent2: "Ogni coach dà il massimo per ottenere il miglior punteggio e scalare la propria classifica.",
+    backgroundImage: "/background.jpg"
+  };
+
+
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
       <div className={styles.frameParent}>
@@ -21,50 +37,41 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
         </div>
         <div className={styles.frameGroup}>
           <div className={styles.howWeDoItParent}>
-            <div className={styles.howWeDo}>HOW WE DO IT</div>
             <h1 className={styles.sectionHeadingContainer}>
               <span>
-                <p className={styles.p}>35+</p>
                 <p className={styles.newCoachesEvery}>
-                  NEW COACHES EVERY MONTH
+                {data.heading}
                 </p>
               </span>
             </h1>
             <div className={styles.sectionEdhen}>
-              Lorem Ipsum has been the industrys standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type ...
+              {data.description}
             </div>
           </div>
           <div className={styles.frameContainer}>
             <div className={styles.frameDiv}>
               <FrameComponent8
                 section="/section.svg"
-                smoothVirtualLive="Smooth Virtual Live"
+                smoothVirtualLive={data.features[0].title}
                 classes="Classes"
               />
               <FrameComponent8
                 section="/section-1.svg"
-                smoothVirtualLive="99% Graduation"
+                smoothVirtualLive={data.features[1].title}
                 classes="Complete"
               />
             </div>
             <div className={styles.frameParent1}>
               <div className={styles.sectionEdhenAnUnknownPriParent}>
                 <div className={styles.sectionEdhen1}>
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type ...
+                  {data.sectionContent1}
                 </div>
                 <button className={styles.rectangleParent}>
                   <div className={styles.frameItem} />
-                  <Link href="/login" className={styles.quickJoinNow}>Quick Join Now</Link>
+                  <Link href="/login" className={styles.quickJoinNow}>{data.quickJoinText}</Link>
                 </button>
               </div>
-              <div className={styles.sectionEdhen2}>
-                Lorem Ipsum has been the industrys standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type ...
+              <div className={styles.sectionEdhen2}>{data.sectionContent2}
               </div>
             </div>
           </div>

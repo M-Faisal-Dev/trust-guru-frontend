@@ -7,6 +7,15 @@ export type FrameComponent9Type = {
 };
 
 const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
+
+  const data = {
+    mainheading: "Affidati a chi vale.",
+    heading: "Scegli i migliori coach in ogni mercato!",
+    description: "Individua velocemente i migliori formatori. Analizza il loro programma dettagliato. Soddisfatto o Rimborsato.",
+    link : "ISCRIVITI"
+   
+  };
+
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
       <div className={`${styles.rectangleParent}   py-7 px-16`}>
@@ -15,27 +24,28 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
           <div className={styles.frameParent}>
             <div className={styles.frameGroup}>
               <div className={styles.learningIsWhatYouParent}>
-                <h1 className={styles.learningIsWhat}>Learning is What You</h1>
+                <h1 className={styles.learningIsWhat}>{data.mainheading}</h1>
                 <h2 className={styles.makeOfIt}>
-                  Make Of It. Make It Yours At Trust Your Guru
+                  {data.heading}
                 </h2>
               </div>
               <div className={styles.loremIpsumHasBeenTheIndusWrapper}>
                 <div className={styles.loremIpsumHasBeen}>
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type ...
+                  {data.description}
                 </div>
               </div>
             </div>
             <div className={styles.frameContainer}>
               <button className={styles.rectangleGroup}>
                 <div className={styles.frameItem} />
-                <Link href = "/courses" className={styles.startFreeTrail}>Start Your Journey</Link>
+                <Link href = "/courses" className={styles.startFreeTrail}>{data.link}</Link>
               </button>
             </div>
           </div>
         </div>
+
+
+        
         <div className={styles.frameDiv}>
           <img className={styles.frameInner} alt="" src="/group-141.svg" />
           <img

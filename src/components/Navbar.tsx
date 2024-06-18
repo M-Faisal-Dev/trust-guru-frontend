@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { CgClose } from "react-icons/cg";
 import { useAuth } from '@/Context/AuthContext';
 import {routes} from "@/libs/api"
+import Link from "next/link"
 
 
 import axios from 'axios';
@@ -13,7 +14,6 @@ import axios from 'axios';
 export type NavbarType = {
   className?: string;
 };
-import Link from "next/link"
 
 const Navbar: NextPage<NavbarType> = ({ className = '' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,8 +36,8 @@ const Navbar: NextPage<NavbarType> = ({ className = '' }) => {
         <div className={styles.homeParent}>
           <Link href="/" className={styles.aboutUs}>Home</Link>
           <Link href="/about-us"  className={styles.aboutUs}>About Us</Link>
-          <Link href="/courses"  className={styles.courses}>Courses</Link>
-          <Link href="/instructor" className={styles.pages}>Instructor</Link>
+          <Link href="/faq"  className={styles.courses}>faq</Link>
+          {/* <Link href="/instructor" className={styles.pages}>Instructor</Link> */}
         </div>
       </nav>
       <div className={styles.frameContainer}>

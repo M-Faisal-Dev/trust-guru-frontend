@@ -6,6 +6,22 @@ export type FrameComponentType = {
 };
 
 const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
+
+  const data = {
+    mainheading: "Affidati a chi vale.",
+    subheading: "Siamo un social marketplace che permette a persone competenti con la passione per l’insegnamento di miglliorare la vita di chi vuole imparare,",
+    listItem1: "Link utili",
+    listItem2: "Riguardo Noi",
+    listItem3: "La nostra azienda",
+    listItem4: "Contattaci",
+    listItem5: "Diventa un coach",
+    listItem6: "Blog",
+    listItem7: "Restiamo in contatto",
+    listItem8: "Seguici sui nostri canali social!",
+  }
+  
+
+
   return (
     <footer className={[styles.frameParent, className].join(" ")}>
       <div className={styles.rectangleParent}>
@@ -14,38 +30,32 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>
           <div className={styles.loremIpsumHasBeenTheIndusParent}>
             <div className={styles.loremIpsumHasBeen}>
-              Lorem Ipsum has been the industrys standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type...
+              {data.subheading}
             </div>
             <div className={styles.listItem4637thAveNyParent}>
-              <div className={styles.listItem}>463 7th Ave, NY 10018, USA</div>
-              <div className={styles.listItem1}>+123 88 9900 456</div>
+              <div className={styles.listItem}>A&A Dealing LLC</div>
+              <div className={styles.listItem}>16192 Coastal Highway, Lewes, Delaware 19958</div>
             </div>
           </div>
         </div>
         <div className={styles.heading4UsefulLinksParent}>
-          <h3 className={styles.heading4}>Useful Links</h3>
+          <h3 className={styles.heading4}>{data.listItem1}</h3>
           <div className={styles.heading4Parent}>
             <div className={styles.heading41} />
             <div className={styles.listItemLinkOurValueParent}>
-              <div className={styles.listItem2}>About Us</div>
-              <div className={styles.listItem3}>Ranking Courses</div>
-              <div className={styles.listItem4}>Best Courses</div>
-              <div className={styles.listItem5}>Best Courses</div>
-              <div className={styles.listItem6}>Best Courses</div>
+              <div className={styles.listItem2}>{data.listItem2}</div>
             </div>
           </div>
         </div>
         <div className={styles.heading4OurCompanyParent}>
-          <h3 className={styles.heading42}>Our Company</h3>
+          <h3 className={styles.heading42}>{data.listItem3}</h3>
           <div className={styles.heading4Group}>
             <div className={styles.heading43} />
             <div className={styles.listItemLinkContactUParent}>
-              <div className={styles.listItem7}>Contact Us</div>
-              <div className={styles.listItem8}>Become Teacher</div>
-            
-              <div className={styles.listItem10}>Instructor</div>
+              <div className={styles.listItem7}>{data.listItem4}</div>
+              <div className={styles.listItem8}>{data.listItem5}</div>
+              <div className={styles.listItem8}>{data.listItem6}</div>
+          
   
             </div>
           </div>
@@ -54,12 +64,11 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           <div className={styles.heading4Container}>
             <div className={styles.heading44} />
             <div className={styles.heading4GetInTouchWrapper}>
-              <h3 className={styles.heading45}>Get In Touch</h3>
+              <h3 className={styles.heading45}>{data.listItem7}</h3>
             </div>
           </div>
           <div className={styles.loremIpsumHasBeen1}>
-            Lorem Ipsum has been the industrys standard dummy text ever since
-            the 1500s,
+           {data.listItem8}
           </div>
           <div className={styles.frameContainer}>
             <div className={styles.vectorParent}>

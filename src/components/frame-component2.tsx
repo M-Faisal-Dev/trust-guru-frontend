@@ -6,6 +6,10 @@ export type FrameComponent2Type = {
 };
 
 const FrameComponent2: NextPage<FrameComponent2Type> = ({ className = "" }) => {
+const data = {
+  heading: "Chi è già su TrustYourGuru.."
+}
+
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
       <div className={styles.rectangleParent}>
@@ -13,7 +17,7 @@ const FrameComponent2: NextPage<FrameComponent2Type> = ({ className = "" }) => {
         <div className={styles.frameParent}>
           <div className={styles.heading2OurTopClassPrWrapper}>
             <h1 className={styles.heading2}>
-              WHO HAS ALREADY USED THE BETA VERSION.
+            {data.heading}
             </h1>
           </div>
           <div className={styles.frameGroup}>

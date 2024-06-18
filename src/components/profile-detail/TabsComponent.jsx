@@ -1,5 +1,8 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import Tab from './Tabs/Tab';
+import BankInfo from './Tabs/Bank-info';
+import { CiBank } from "react-icons/ci";
 
 const TabsComponent = () => {
     const [activeTab, setActiveTab] = useState('tab1');
@@ -75,6 +78,13 @@ const TabsComponent = () => {
                                         hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
                                     onClick={() => handleTabClick('tab3')}
                                 >
+                                    <CiBank /> Bank Account 
+                                </li>
+                                <li
+                                    className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
+                                        hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
+                                    onClick={() => handleTabClick('tab3')}
+                                >
                                     <img src="/signout.svg" alt="profile" /> Sign Out
                                 </li>
                             </ul>
@@ -108,6 +118,16 @@ const TabsComponent = () => {
                                     </li>
                                     <li
                                         className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
+                                             hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab4' ? 'bg-light-grey active' : ''}`}
+                                        onClick={() => handleTabClick('tab4')}
+                                    >
+                                        <div className='flex flex-row justify-between items-center'>
+
+                                          <CiBank className=' font-semibold mr-3'/> Bank Account 
+                                        </div>
+                                    </li>
+                                    <li
+                                        className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
                                              hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
                                         onClick={() => handleTabClick('tab3')}
                                     >
@@ -135,6 +155,11 @@ const TabsComponent = () => {
                         {activeTab === 'tab3' && (
                             <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? 'active' : ''} w-full md:pb-0 xxs:pb-[30px]`}>
                                 <p>Tab 3</p>
+                            </div>
+                        )}
+                        {activeTab === 'tab4' && (
+                            <div id="tab3" className={`tab-content ${activeTab === 'tab4' ? 'active' : ''} w-full md:pb-0 xxs:pb-[30px]`}>
+                                   <BankInfo />
                             </div>
                         )}
                     </div>

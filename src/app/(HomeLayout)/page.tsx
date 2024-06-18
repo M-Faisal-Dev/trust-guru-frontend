@@ -6,6 +6,8 @@ import Cources1 from "@/components/frame-component3";
 import Cources from "@/components/frame-component4";
 import Cources3 from "@/components/frame-component2";
 import Cources4 from "@/components/frame-component1";
+import AboutUs from "@/components/About-us/About"
+
 
 
 
@@ -29,6 +31,7 @@ export default function Home() {
     <Teacher/>
     <Cources/>
     <Cources1/>
+    <AboutUs/>
     <Cources3/>
     <Cources4/>
     {/* <Cources5/> */}

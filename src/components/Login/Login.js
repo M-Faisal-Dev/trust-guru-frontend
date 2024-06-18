@@ -98,13 +98,12 @@ const [openDrop2nd, setOpenDrop2nd] = useState(false)
 
 
 const courseConditions = [
-  { value: 'condition1', label: 'Condition 1' },
-  { value: 'condition2', label: 'Condition 2' },
-  { value: 'other', label: 'Other' },
+  { value: 'UX Design Lead', label: 'UX Design Lead' },
+  { value: 'Dropshipping', label: 'Dropshipping' },
+  { value: 'Vendita telefonica', label: 'Vendita telefonica' },
 ];
 
 const languageConditions = [
-  { value: 'english', label: 'English' },
   { value: 'italian', label: 'Italian' },
 ];
 
@@ -179,7 +178,7 @@ const handleSubmitProfile = async (e) => {
         >
           &times;
         </button>
-        <h2 className="text-xl font-bold text-blue mb-3 text-center">Answer Of these Question</h2>
+        <h2 className="text-xl font-bold text-blue mb-3 text-center">Cosa vorresti imparare?</h2>
 
 <hr  className="border w-full right-0 opacity-50 border-blue mb-3"/>
 
@@ -189,7 +188,7 @@ const handleSubmitProfile = async (e) => {
 
 
           <label className="block text-lg font-medium text-gray-700">
-              Upload Profile Picture
+          Foto profilo
             </label>
          
         <div className="relative overflow-visible flex flex-row">
@@ -241,7 +240,7 @@ const handleSubmitProfile = async (e) => {
 
          
       <label className="block text-lg font-medium py-2 px-4 w-full text-gray-700">
-      Course about business 
+      Business
       </label>
 
     {
@@ -323,78 +322,79 @@ const handleSubmitProfile = async (e) => {
    
    
    
-      <section className="flex flex-col w-full md:flex-row justify-center items-center max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+    <section className="flex flex-col w-full md:flex-row justify-center items-center max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
 
-        <div className="hidden md:block md:flex-1 md:mr-6 w-2/5 p-6 flex justify-center items-center">
-          <Image width={300} height={300} alt="sideImg" src="/login.svg" className="w-full h-auto" />
+<div className="hidden md:block md:flex-1 md:mr-6 w-2/5 p-6 flex justify-center items-center">
+  <Image width={300} height={300} alt="sideImg" src="/login.svg" className="w-full h-auto" />
+</div>
+
+<div className="md:flex-1 p-6 flex md:w-3/5 w-full flex-col justify-center">
+  <div className="w-full">
+    <div className="p-4 space-y-2 md:space-y-4 sm:p-8">
+      <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center">
+        Accesso
+      </h1>
+      <p className="text-base font-light text-center text-gray-600">
+        Non hai un account? <Link href="/register" className="font-medium text-blue hover:underline cursor-pointer">Registrati qui</Link>
+      </p>
+
+      <form className="space-y-2 md:space-y-4" onSubmit={handleSubmit}>
+        <div>
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" 
+            placeholder="nome@azienda.com" 
+            value={formData.email}
+            onChange={handleChange}
+            required 
+          />
         </div>
-
-        <div className="md:flex-1 p-6 flex md:w-3/5 w-full flex-col justify-center">
-          <div className="w-full">
-            <div className="p-4 space-y-2 md:space-y-4 sm:p-8">
-              <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center">
-                Login
-              </h1>
-              <p className="text-base font-light text-center text-gray-600">
-                Dont have an account? <Link href="/register" className="font-medium text-blue hover:underline cursor-pointer">Register here</Link>
-              </p>
-
-              <form className="space-y-2 md:space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    id="email" 
-                    className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" 
-                    placeholder="name@company.com" 
-                    value={formData.email}
-                    onChange={handleChange}
-                    required 
-                  />
-                </div>
-                <div>
-                  <input 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                    placeholder="Password" 
-                    className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" 
-                    value={formData.password}
-                    onChange={handleChange}
-                    required 
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <input 
-                      type="checkbox" 
-                      name="rememberMe" 
-                      id="rememberMe" 
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                      checked={formData.rememberMe}
-                      onChange={handleChange}
-                    />
-                    <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-900">
-                      Remember me
-                    </label>
-                  </div>
-                  <div className="text-sm">
-                    <a href="#" className="font-medium text-blue hover:underline cursor-pointer">
-                      Forgot your password?
-                    </a>
-                  </div>
-                </div>
-                <button 
-                  type="submit" 
-                  className="w-full text-white bg-blue hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-base px-5 py-2.5 text-center"
-                >
-                  Login
-                </button>
-              </form>
-            </div>
+        <div>
+          <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="Password" 
+            className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" 
+            value={formData.password}
+            onChange={handleChange}
+            required 
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <input 
+              type="checkbox" 
+              name="rememberMe" 
+              id="rememberMe" 
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              checked={formData.rememberMe}
+              onChange={handleChange}
+            />
+            <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-900">
+              Ricordati di me
+            </label>
+          </div>
+          <div className="text-sm">
+            <a href="#" className="font-medium text-blue hover:underline cursor-pointer">
+              Hai dimenticato la password?
+            </a>
           </div>
         </div>
-      </section>
+        <button 
+          type="submit" 
+          className="w-full text-white bg-blue hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-base px-5 py-2.5 text-center"
+        >
+          Accesso
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
     </div>
   );
 }

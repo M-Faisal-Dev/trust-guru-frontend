@@ -6,14 +6,23 @@ export type FrameComponent1Type = {
 };
 
 const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
+const data = {
+  heading : "AFFIDATI A CHI VALE!",
+  subheading : "I migliori formatori per ogni nicchia",
+  subheading1 : "Segui il tuo percorso ovunque",
+  subheading2 : "Pagamento settimanale",
+  btn : "INIZIA OGGI!",
+
+}
+
+
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
       <div className={styles.frameParent}>
         <div className={styles.frameWrapper}>
           <div className={styles.sectionHeading2ThousandParent}>
             <h1 className={styles.sectionHeading}>
-              TYGs purpose is to allow truly competent people to earn money by
-              helping others.
+             {data.heading}
             </h1>
             <div className={styles.frameGroup}>
               <div className={styles.frameContainer}>
@@ -27,7 +36,7 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
                       />
                     </div>
                     <div className={styles.sectionList}>
-                      The Most World Class Instructors
+                      {data.subheading}
                     </div>
                   </div>
                   <div className={styles.frameParent2}>
@@ -39,7 +48,7 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
                       />
                     </div>
                     <div className={styles.sectionList1}>
-                      Access Your Class anywhere
+                     {data.subheading1}
                     </div>
                   </div>
                   <div className={styles.frameParent3}>
@@ -51,14 +60,14 @@ const FrameComponent1: NextPage<FrameComponent1Type> = ({ className = "" }) => {
                       />
                     </div>
                     <div className={styles.sectionList2}>
-                      Flexible Course Plan
+                      {data.subheading2}
                     </div>
                   </div>
                 </div>
               </div>
               <button className={styles.rectangleParent}>
                 <div className={styles.frameChild} />
-                <Link href="/courses" className={styles.startFreeTrial}>Start Your Journey</Link>
+                <Link href="/courses" className={styles.startFreeTrial}>{data.btn}</Link>
                 <div className={styles.vectorWrapper1}>
                   <img
                     className={styles.vectorIcon3}

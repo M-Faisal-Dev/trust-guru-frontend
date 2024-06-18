@@ -48,7 +48,7 @@
 .sectionEdhen {
   align-self: stretch;
   position: relative;
-  font-size: var(--font-size-mini);
+  font-size: 20px;
   line-height: 171.5%;
   color: var(--color-black);
 }
@@ -117,7 +117,7 @@
   min-width: 179px;
 }
 .sectionEdhen2 {
-  height: 77px;
+  height: 45px;
   flex: 1;
   position: relative;
   line-height: 171.5%;

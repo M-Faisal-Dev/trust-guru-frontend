@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "../globals.css";
-import Navbar from "@/components/Instructor-detail/Nav";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from 'react-toastify';
 import { AuthProvider} from "@/Context/AuthContext";
@@ -32,10 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.className}>
       <AuthProvider>
-        <div className = "z-99999">
-
-      <Navbar />
-        </div>
+      <Navbar/>
       <ToastContainer/>
       {children}
       <Footer/>
