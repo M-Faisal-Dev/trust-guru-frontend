@@ -65,7 +65,7 @@ const Nav = () => {
         {/* Hamburger Icon */}
         <button
           id="menu-btn"
-          className="block hamburger md:hidden focus:outline-none"
+          className="flex flex-col hamburger  md:hidden focus:outline-none"
         >
           <span className="hamburger-top"></span>
           <span className="hamburger-middle"></span>
