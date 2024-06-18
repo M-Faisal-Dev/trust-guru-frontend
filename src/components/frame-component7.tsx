@@ -27,14 +27,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
       <div className={styles.frameParent}>
-        <div className={styles.frameWrapper}>
-          <img
-            className={styles.frameChild}
-            loading="lazy"
-            alt=""
-            src="/group-26.svg"
-          />
-        </div>
+        
         <div className={styles.frameGroup}>
           <div className={styles.howWeDoItParent}>
             <h1 className={styles.sectionHeadingContainer}>
@@ -73,6 +66,15 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
               </div>
               <div className={styles.sectionEdhen2}>{data.sectionContent2}
               </div>
+
+              <div className={styles.frameWrapper}>
+          <img
+            className={styles.frameChild}
+            loading="lazy"
+            alt=""
+            src="/group-26.svg"
+          />
+        </div>
             </div>
           </div>
         </div>
