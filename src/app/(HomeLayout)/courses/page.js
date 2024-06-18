@@ -2,7 +2,7 @@ import Course from "@/components/Course-detail/Course";
 
 async function getData() {
   try {
-    const res = await fetch('http://localhost:4000/api/course', { cache: 'no-store' });
+    const res = await fetch('https://backend.trustyourguru.com/api/course', { cache: 'no-store' });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }

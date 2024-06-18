@@ -3,7 +3,7 @@ import Graphics from '@/components/Coaching-detail/Graphics';
 
 async function getData(id) {
   try {
-    const res = await fetch(`http://localhost:4000/api/course/${id}`, { cache: 'no-store' });
+    const res = await fetch(`https://backend.trustyourguru.com/api/course/${id}`, { cache: 'no-store' });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }

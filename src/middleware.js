@@ -8,7 +8,7 @@ export function middleware(request) {
 
   if (token && userType.value === 'Teacher') {
     return NextResponse.next(); // Allow the request to proceed
-  } else if (token && userType.value === 'student') {
+  } else if (token && userType.value === 'Student') {
     return NextResponse.next();
   } else{
     return NextResponse.redirect(new URL('/login', request.url)); // Redirect to /view-profile
