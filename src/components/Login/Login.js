@@ -28,7 +28,7 @@ function LoginPage() {
 
 
   const [popup, setPopup] = useState(false);
-  const { isAuthenticated, login, logout, userToken, getRefreshToken } = useAuth();
+  const { isAuthenticated, login, setRefreshToken, logout, userToken, getRefreshToken } = useAuth();
 
 
   const handleChange = (e) => {
@@ -55,10 +55,11 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await instance.post(routes.login, formData);
-    console.log(res.data.userType )
+    setRefreshToken(res.data.token)
 if(res.data.userType === "Teacher"){
   router.push("/view-profile")
   login(res.data.userType)
+ 
 
 } else{
   const getToken = res.data.token
