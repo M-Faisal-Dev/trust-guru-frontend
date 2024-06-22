@@ -1,10 +1,13 @@
-// Message.jsx
 import React from 'react';
 
 function Message({ text, sender }) {
+ 
+console.log(sender, "this is sender")
   return (
-    <div className={`mb-2 p-2 rounded-lg max-w-xs ${sender === 'user' ? 'bg-green-200 self-end' : 'bg-gray-200 self-start'}`}>
-      {text}
+    <div className={`flex px-8 mb-2 ${sender === "sender" ? 'justify-end' : 'justify-start'}`}>
+      <div className={`p-2 rounded-lg max-w-[80%] text-black ${sender  === "sender"? 'bg-slate-300 shadow-md' : 'bg-slate-100 shadow-md'}`}>
+        <p className="m-0">{text}</p>
+      </div>
     </div>
   );
 }

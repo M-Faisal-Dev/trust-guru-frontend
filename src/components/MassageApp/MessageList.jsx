@@ -1,22 +1,19 @@
-// MessageList.jsx
 import React from 'react';
-import Message from './Message';
+import Message from './Message'; // Adjust the import path based on your project structure
 
-function MessageList() {
-  // Dummy messages
-  const messages = [
-    { id: 1, text: 'Hello!', sender: 'user' },
-    { id: 2, text: 'Hi there!', sender: 'other' },
-    // Add more messages here
-  ];
-
+function MessagesComponent({ messages }) {
+  
   return (
-    <div className="flex-1 p-4 overflow-y-auto">
-      {messages.map((msg) => (
-        <Message key={msg.id} text={msg.text} sender={msg.sender} />
+    <div className="flex flex-col overflow-scroll space-y-2">
+      {messages.map((msg, index) => (
+        <Message
+          key={index} // Use a unique key for each message
+          text={msg.text}
+          sender={msg.type}
+        />
       ))}
     </div>
   );
 }
 
-export default MessageList;
+export default MessagesComponent;

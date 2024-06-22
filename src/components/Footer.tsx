@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import styles from "./frame-component.module.css";
+import Link from "next/link"
 
 export type FrameComponentType = {
   className?: string;
@@ -44,6 +45,10 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
             <div className={styles.heading41} />
             <div className={styles.listItemLinkOurValueParent}>
               <div className={styles.listItem2}>{data.listItem2}</div>
+              <div className={styles.listItem2}> 
+              <Link href="/privacy-policy" >privacy-policy </Link>
+              
+              </div>
             </div>
           </div>
         </div>
@@ -72,15 +77,9 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           </div>
           <div className={styles.frameContainer}>
             <div className={styles.vectorParent}>
-              <img className={styles.vectorIcon} alt="" src="/vector-7.svg" />
-              <div className={styles.vectorWrapper}>
-                <img
-                  className={styles.vectorIcon1}
-                  alt=""
-                  src="/vector-8.svg"
-                />
-              </div>
-              <img className={styles.vectorIcon2} alt="" src="/vector-9.svg" />
+              <img className={styles.vectorIcon} alt="facebook" src="/vector-7.svg" />
+              
+              <img className={styles.vectorIcon2} alt="whatsapp" src="/vector-9.svg" />
               <div className={styles.frameWrapper}>
                 <div className={styles.vectorGroup}>
                   <img
@@ -96,13 +95,12 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
                     />
                     <img
                       className={styles.vectorIcon5}
-                      alt=""
+                      alt="instagram"
                       src="/vector-12.svg"
                     />
                   </div>
                 </div>
               </div>
-              <img className={styles.vectorIcon6} alt="" src="/vector-13.svg" />
             </div>
             <div className={styles.frameDiv}>
               <div className={styles.vectorParent1}>
@@ -159,7 +157,7 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
       </div>
       <div className={styles.skillgrocomAllRightsReserWrapper}>
         <div className={styles.skillgrocomAllRights}>
-          © 2010-2024 skillgro.com. All rights reserved.
+          © 2010-2024 www.trustyourguru.com. All rights reserved.
         </div>
       </div>
     </footer>

@@ -8,6 +8,7 @@
   text-transform: capitalize;
   font-weight: 600;
   font-family: inherit;
+  font-size: xx-large;
 }
 .vectorIcon {
   width: 6px;
@@ -166,10 +167,9 @@
 }
 .frameWrapper {
   flex: 1;
-  padding: 0 0 var(--padding-32xl);
   box-sizing: border-box;
-  min-width: 392px;
-  min-height: 434px;
+  min-width: 300px;
+  min-height: 430px;
   flex-shrink: 0;
 }
 .frameItem {
@@ -245,5 +245,7 @@
   .frameWrapper {
     padding-bottom: var(--padding-14xl);
     box-sizing: border-box;
+    min-height: 280px;
   }
+
 }

@@ -124,7 +124,7 @@ body {
   --padding-93xl-8: 112.8px;
   --padding-54xl: 73px;
   --padding-32xl: 51px;
-  --padding-14xl: 33px;
+  --padding-14xl: 5px;
   --padding-base: 16px;
   --padding-9xl: 28px;
   --padding-10xl: 29px;
@@ -135,8 +135,8 @@ body {
   --padding-71xl: 90px;
   --padding-99xl: 118px;
   --padding-51xl: 70px;
-  --padding-238xl: 257px;
-  --padding-109xl: 128px;
+  --padding-238xl: 70px;
+  --padding-109xl: 59px;
   --padding-39xl: 58px;
   --padding-26xl: 45px;
   --padding-17xl: 36px;
@@ -169,7 +169,7 @@ body {
   --padding-86xl: 105px;
   --padding-36xl: 55px;
   --padding-56xl: 75px;
-  --padding-30xl: 49px;
+  --padding-30xl: 10px;
   --padding-mid: 17px;
   --padding-lg: 18px;
   --padding-8xs: 5px;

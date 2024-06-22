@@ -6,9 +6,9 @@ export function middleware(request) {
   const token = request.cookies.get('refreshToken');
   const userType = request.cookies.get('user_type');
 
-  if (token && userType.value === 'Teacher') {
+  if (token && userType?.value === 'Teacher') {
     return NextResponse.next(); // Allow the request to proceed
-  } else if (token && userType.value === 'Student') {
+  } else if (token && userType?.value === 'Student') {
     return NextResponse.next();
   } else{
     return NextResponse.redirect(new URL('/login', request.url)); // Redirect to /view-profile

@@ -27,6 +27,14 @@ export const routes = {
     updateTeacher: `${api}teacher-profile`,
     bankDetails: `${api}teacher-profile/update-back-details`,
 
+    // msg api 
+    getStudent: `${api}student-purchased-courses`,
+    getTeacher: `${api}teacher-purchased-courses`,
+    saveMessage: `${api}messages/send`,
+    getSanderMessages : `${api}sender-msg`,
+    receivedMessages : `${api}receiver-msg`,
+
+
 
 
     email: `${api}email`,

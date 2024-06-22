@@ -222,3 +222,55 @@
     box-sizing: border-box;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .groupIcon {
+  
+    left: 50px;
+    width: 334.3px;
+    object-fit: cover;
+    height: 83%;
+
+
+  }
+  .frameInner {
+  
+    position: absolute;
+    top: 0.2px;
+    left: -13px;
+    width: 450.8px;
+    height: 447.4px;
+    z-index: 3;
+
+
+  }
+}
+
+  @media screen and (max-width: 400px) {
+    .groupIcon {
+    
+      left: 40px;
+      width: 300.3px;
+      object-fit: cover;
+      height: 73%;
+  
+  
+    }
+
+    .frameInner {
+  
+      position: absolute;
+      top: 0.2px;
+      left: -13px;
+      width: 450.8px;
+      height: 360.4px;
+      z-index: 3;
+  
+  
+    }
+  }
+
+
+
+
+

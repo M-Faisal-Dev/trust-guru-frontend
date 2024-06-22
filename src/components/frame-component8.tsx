@@ -15,7 +15,7 @@ const FrameComponent8: NextPage<FrameComponent8Type> = ({
   classes,
 }) => {
   return (
-    <div className={[styles.sectionParent, className].join(" ")}>
+    <div className={`${styles.sectionParentjoin} items-center flex flex-row space-x-3`}>
       <img className={styles.sectionIcon} loading="lazy" alt="" src={section} />
       <div className={styles.sectionHeading4SmoothVWrapper}>
         <div className={styles.sectionHeadingContainer}>

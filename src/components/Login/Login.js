@@ -56,26 +56,32 @@ const handleSubmit = async (e) => {
   try {
     const res = await instance.post(routes.login, formData);
     
-    const getuserToken = res.data.token
-    login(res.data.userType)
-    setRefreshToken(getuserToken)
-if(res.data.userType === "Teacher"){
-  login(res.data.userType)
-  router.push("/view-profile")
-} else{
-  const getToken = res.data.token
-  login(res.data.userType)
-  setToken(getToken);
-  setPopup(true)
+    const getuserToken = res.data.token;
+    login(res.data.userType);
 
-}
+    setRefreshToken(getuserToken);
 
+    if (res.data.userType === "Teacher") {
+      login(res.data.userType);
+      router.push("/view-profile");
+    } else {
+      const getToken = res.data.token;
+      login(res.data.userType);
+      setToken(getToken);
+
+      const { courseOptions, languageOptions, profileImg } = res.data;
+
+      if (!courseOptions && !languageOptions && !profileImg) {
+        setPopup(true);
+      }
+    }
 
   } catch (error) {
-    console.log(error)
-    toast.error("Login failed: Please check you credentials")
+    console.log(error);
+    toast.error("Login failed: Please check your credentials");
   }
 };
+
 
 
 

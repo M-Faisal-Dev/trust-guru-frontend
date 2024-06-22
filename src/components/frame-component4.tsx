@@ -20,10 +20,10 @@ const data = {
               <div className={styles.topClassCourses}></div>
             </div>
             <div className={styles.heading2ExploreOurWorldParent}>
-              <h1 className={styles.heading2}>
-              {data.heading}
+              <p className={styles.heading2}>
+              I piu’ scelti.
               
-              </h1>
+              </p>
               <div className={styles.whenKnownPrinterTookAGallWrapper}>
                 <div className={styles.whenKnownPrinter}>
                 {data.subheading}

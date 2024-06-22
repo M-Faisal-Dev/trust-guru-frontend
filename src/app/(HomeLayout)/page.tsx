@@ -24,14 +24,13 @@ import Teacher from "@/components/frame-component5";
 
 export default function Home() {
   return (
-   <main>
+   <main className="overflow-hidden">
 
     <Banner/>
     <Main/>
     <Teacher/>
     <Cources/>
     <Cources1/>
-    <AboutUs/>
     <Cources3/>
     <Cources4/>
     {/* <Cources5/> */}

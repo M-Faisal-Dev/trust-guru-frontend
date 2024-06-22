@@ -18,7 +18,7 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
 
   return (
     <section className={[styles.desktop1Inner, className].join(" ")}>
-      <div className={`${styles.rectangleParent}   py-7 px-16`}>
+      <div className={`${styles.rectangleParent}   py-7 px-16 `}>
         <div className={styles.frameChild}   />
         <div className={styles.frameWrapper}>
           <div className={styles.frameParent}>
@@ -31,7 +31,10 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
               </div>
               <div className={styles.loremIpsumHasBeenTheIndusWrapper}>
                 <div className={styles.loremIpsumHasBeen}>
-                  {data.description}
+
+                <p> <strong>Individua velocemente</strong> i migliori formatori.</p>
+                <p> <strong>Analizza</strong>  il loro programma dettagliato. </p>
+                <p> <strong>Soddisfatto o Rimborsato.</strong></p>
                 </div>
               </div>
             </div>

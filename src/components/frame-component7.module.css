@@ -198,6 +198,7 @@
 @media screen and (max-width: 750px) {
   .frameWrapper {
     min-width: 100%;
+    display: none;
   }
   .sectionHeadingContainer {
     font-size: var(--font-size-10xl);

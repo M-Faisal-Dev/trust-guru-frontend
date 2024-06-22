@@ -7,7 +7,7 @@ export type FrameComponent2Type = {
 
 const FrameComponent2: NextPage<FrameComponent2Type> = ({ className = "" }) => {
 const data = {
-  heading: "Chi è già su TrustYourGuru.."
+  heading: "Chi è già su TYG"
 }
 
   return (

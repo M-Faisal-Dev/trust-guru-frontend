@@ -23,10 +23,18 @@ const data = {
     <section className="max-w-7xl mx-auto">
    
   <div className = "flex md:flex-row flex-col items-center justify-center">
-  <div className="flex flex-col justify-center  md:w-1/2 p-4">
+  <div className="flex flex-col justify-center  md:w-2/5 p-4">
         <div className="mb-4 text-2xl font-medium  text-blue">{data.heading}</div>
         <h2 className="mb-4 text-2xl font-semibold text-blue-600">{data.heading2}</h2>
-        <div className="mb-4 text-xl font-medium ">{data.discription}</div>
+        <div className="mb-4 text-xl font-medium ">
+          
+    <p><strong>TrustYourGuru</strong> aiuta i coach ad <strong> ottenere clienti gratuitamente!</strong>  </p>
+    <p>
+    Il loro successo dipenderà dal <strong>livello di soddisfazione</strong> dei loro studenti. 
+
+    </p>
+        
+        </div>
       </div>
   
       <div className="flex items-center justify-center text-center ">
@@ -49,7 +57,7 @@ const data = {
             {/* Card 2 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="https://source.unsplash.com/300x300/?girl" alt="img" className="object-cover w-full h-full" />
+                <img src="/section--link--instructor02png@2x.png" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
@@ -65,11 +73,11 @@ const data = {
             {/* Card 3 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="https://source.unsplash.com/300x300/?girl,woman" alt="img" className="object-cover w-full h-full" />
+                <img src="/section--link--instructor03png@2x.png" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
-                <div className="styles.sectionWeb">UX Design Lead</div>
+                <div className={styles.sectionWeb}>UX Design Lead</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>
                 </div>
@@ -79,11 +87,11 @@ const data = {
             {/* Card 4 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="https://source.unsplash.com/300x300/?woman" alt="img" className="object-cover w-full h-full" />
+                <img src="/section--link--instructor04png@2x.png" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
-                <div className="styles.sectionWeb">UX Design Lead</div>
+                <div className={styles.sectionWeb}>UX Design Lead</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>
                 </div>
