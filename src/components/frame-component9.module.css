@@ -130,15 +130,16 @@
   height: 100%;
   top: 0;
   bottom: 0;
-  left: 71px;
+  left: 2px;
   max-height: 100%;
-  width: 418.3px;
+  width: 500.3px;
   object-fit: cover;
   z-index: 4;
+  border-radius: 20px;
 }
 .frameDiv {
   height: 510.3px;
-  width: 489.3px;
+  width: 510.3px;
   position: relative;
   min-width: 489.2999999999999px;
   max-width: 100%;
@@ -226,11 +227,10 @@
 @media screen and (max-width: 550px) {
   .groupIcon {
   
-    left: 50px;
-    width: 334.3px;
-    object-fit: cover;
+    left: 5px;
+    /* width: 383.3px; */
+    object-fit: contain;
     height: 83%;
-
 
   }
   .frameInner {
@@ -248,12 +248,11 @@
 
   @media screen and (max-width: 400px) {
     .groupIcon {
-    
-      left: 40px;
-      width: 300.3px;
-      object-fit: cover;
-      height: 73%;
   
+      left: 5px;
+      /* width: 383.3px; */
+      object-fit: contain;
+      height: 83%;
   
     }
 

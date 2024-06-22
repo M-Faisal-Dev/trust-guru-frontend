@@ -55,7 +55,7 @@ const Nav = () => {
         <div className="hidden space-x-[31px] md:flex xl:text-lg xxs:text-sm font-medium text-white">
           <Anchor text='Home' link="/" />
           <Anchor text='FAQ' link="/faq" />
-          <Anchor text='About us' link="/about-us" />
+          <Anchor text='Chi Siamo' link="/about-us" />
         </div>
   
         {/* Button */}
@@ -95,7 +95,7 @@ const Nav = () => {
         >
           <Anchor text='Home' link="/" />
           <Anchor text='FAQ' link="/faq" />
-          <Anchor text='About us' link="/about-us" />
+          <Anchor text='Chi Siamo' link="/about-us" />
   
           {isAuthenticated ? ( 
             <button 

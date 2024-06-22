@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import styles from "./frame-component.module.css";
 import Link from "next/link"
+import { FaFacebookF } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
+import { IoLogoInstagram } from "react-icons/io5";
 
 export type FrameComponentType = {
   className?: string;
@@ -21,8 +24,6 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
     listItem8: "Seguici sui nostri canali social!",
   }
   
-
-
   return (
     <footer className={[styles.frameParent, className].join(" ")}>
       <div className={styles.rectangleParent}>
@@ -57,7 +58,10 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           <div className={styles.heading4Group}>
             <div className={styles.heading43} />
             <div className={styles.listItemLinkContactUParent}>
-              <div className={styles.listItem7}>{data.listItem4}</div>
+              <div className={styles.listItem7}>
+             
+                
+                {data.listItem4}</div>
               <div className={styles.listItem8}>{data.listItem5}</div>
               <div className={styles.listItem8}>{data.listItem6}</div>
           
@@ -69,43 +73,36 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           <div className={styles.heading4Container}>
             <div className={styles.heading44} />
             <div className={styles.heading4GetInTouchWrapper}>
-              <h3 className={styles.heading45}>{data.listItem7}</h3>
+              <h3 className={`${styles.heading45}`}>
+
+
+
+              <div className={`${styles.vectorParent} space-x-3 flex justify-center`}>
+              <Link href="https://www.facebook.com/profile.php?id=61560140813337">
+              <FaFacebookF />
+              </Link>
+              <RiWhatsappFill />
+
+
+              <Link href="https://www.instagram.com/trust.your.guru?fbclid=IwZXh0bgNhZW0CMTAAAR0UHG1RGZUMrWnLr2p1aQDl4hq5Xlgoj4ENpi29Aeqd24h-8NM6qzhDMCU_aem_ZmFrZWR1bW15MTZieXRlcw">
+                    
+                    <IoLogoInstagram />
+                    </Link>
+
+          
+            </div>
+                
+                </h3>
             </div>
           </div>
+         
           <div className={styles.loremIpsumHasBeen1}>
            {data.listItem8}
           </div>
+
           <div className={styles.frameContainer}>
-            <div className={styles.vectorParent}>
-              <Link href="https://www.facebook.com/profile.php?id=61560140813337">
-              <img className={styles.vectorIcon} alt="facebook" src="/vector-7.svg" />
-              </Link>
-              <img className={styles.vectorIcon2} alt="whatsapp" src="/vector-9.svg" />
-              <div className={styles.frameWrapper}>
-                <div className={styles.vectorGroup}>
-                  <img
-                    className={styles.vectorIcon3}
-                    alt=""
-                    src="/vector-10.svg"
-                  />
-                  <div className={styles.vectorContainer}>
-                    <img
-                      className={styles.vectorIcon4}
-                      alt=""
-                      src="/vector-11.svg"
-                    />
-                    <Link href="https://www.instagram.com/trust.your.guru?fbclid=IwZXh0bgNhZW0CMTAAAR0UHG1RGZUMrWnLr2p1aQDl4hq5Xlgoj4ENpi29Aeqd24h-8NM6qzhDMCU_aem_ZmFrZWR1bW15MTZieXRlcw">
-                    
-                    <img
-                      className={styles.vectorIcon5}
-                      alt="instagram"
-                      src="/vector-12.svg"
-                    />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>
+         
             <div className={styles.frameDiv}>
               <div className={styles.vectorParent1}>
                 <img className={styles.vectorIcon7} alt="" src="/vector1.svg" />

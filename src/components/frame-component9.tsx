@@ -50,7 +50,7 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
 
         
         <div className={styles.frameDiv}>
-          <img className={styles.frameInner} alt="" src="/group-141.svg" />
+          {/* <img className={styles.frameInner} alt="" src="/group-141.svg" /> */}
           <img
             className={styles.groupIcon}
             loading="lazy"
