@@ -32,16 +32,18 @@ export const AuthProvider = ({ children }) => {
     setUserType(type);
   };
 
+  const logout = () => {
+    Cookies.remove('refreshToken'); // Remove refreshToken cookie
+    Cookies.remove('user_type');    // Remove user_type cookie
+    setIsAuthenticated(false);       // Set isAuthenticated to false
+    setUserType(null);               // Set userType to null
+    setUserToken(null);              // Optionally, clear userToken if needed
+  };
+
   const setRefreshToken = (refreshToken) => {
     Cookies.set('refreshToken', refreshToken);
   };
 
-  const logout = () => {
-    Cookies.remove('auth_token');
-    Cookies.remove('user_type');
-    setIsAuthenticated(false);
-    setUserType(null);
-  };
 
   const getRefreshToken = () => {
     const token = Cookies.get('refreshToken');

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Tab from './Tabs/Tab';
 import BankInfo from './Tabs/Bank-info';
 import { CiBank } from "react-icons/ci";
-
+import Link from "next/link"
 const TabsComponent = () => {
     const [activeTab, setActiveTab] = useState('tab1');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,13 +66,18 @@ const TabsComponent = () => {
                                 >
                                     <img src="/myprofile.svg'" alt="profile" /> Profile
                                 </li>
+                                
+                                <Link href = "/listing">
                                 <li
                                     className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
                                         hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab2' ? 'bg-light-grey active' : ''}`}
-                                    onClick={() => handleTabClick('tab2')}
+                                    
                                 >
                                     <img src="/myprofile.svg" alt="profile" /> My Listing
                                 </li>
+                                </Link>
+                               
+
                                 <li
                                     className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
                                         hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
@@ -80,13 +85,7 @@ const TabsComponent = () => {
                                 >
                                     <CiBank /> Bank Account 
                                 </li>
-                                <li
-                                    className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
-                                        hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
-                                    onClick={() => handleTabClick('tab3')}
-                                >
-                                    <img src="/signout.svg" alt="profile" /> Sign Out
-                                </li>
+                              
                             </ul>
                         </nav>
                     </div>
@@ -109,13 +108,15 @@ const TabsComponent = () => {
                                     >
                                         <img src="/list.svg" alt="profile" /> Profile
                                     </li>
-                                    <li
-                                        className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
-                                             hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab2' ? 'bg-light-grey active' : ''}`}
-                                        onClick={() => handleTabClick('tab2')}
-                                    >
-                                        <img src="/myprofile.svg" alt="profile" /> My Listing
-                                    </li>
+                                    <Link href = "/listing">
+                                <li
+                                    className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
+                                        hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab2' ? 'bg-light-grey active' : ''}`}
+                                    
+                                >
+                                    <img src="/myprofile.svg" alt="profile" /> My Listing
+                                </li>
+                                </Link>
                                     <li
                                         className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
                                              hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab4' ? 'bg-light-grey active' : ''}`}
@@ -126,13 +127,7 @@ const TabsComponent = () => {
                                           <CiBank className=' font-semibold mr-3'/> Bank Account 
                                         </div>
                                     </li>
-                                    <li
-                                        className={`tab cursor-pointer text-skyblue sm:text-xl xxs:text-base font-medium flex gap-4 py-[11px] px-[34px]
-                                             hover:bg-light-grey hover:text-skyblue ${activeTab === 'tab3' ? 'bg-light-grey active' : ''}`}
-                                        onClick={() => handleTabClick('tab3')}
-                                    >
-                                        <img src="/signout.svg" alt="profile" /> Sign Out
-                                    </li>
+                                   
                                 </ul>
                             </nav>
                         </div>

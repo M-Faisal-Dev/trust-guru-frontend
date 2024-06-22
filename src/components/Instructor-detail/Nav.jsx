@@ -5,9 +5,11 @@ import { useAuth } from '@/Context/AuthContext';
 import {routes} from "@/libs/api"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from 'next/navigation'
 
 
 const Nav = () => {
+  const router = useRouter()
   useEffect(() => {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('menu');
@@ -27,13 +29,9 @@ const Nav = () => {
 
   const { isAuthenticated, userType, logout } = useAuth();
 
-  const handleLogout = async () => {
-    try {
-      await axios.get(routes.logout, { withCredentials: true });
-      // Perform any additional cleanup actions, such as redirecting or clearing local state
-    } catch (error) {
-      console.error('Error logging out:', error);
-    }
+  const handleLogout = () => {
+    logout();
+    router.push('/'); // Redirect to home page
   };
 
 
