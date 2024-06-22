@@ -77,8 +77,9 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           </div>
           <div className={styles.frameContainer}>
             <div className={styles.vectorParent}>
+              <Link href="https://www.facebook.com/profile.php?id=61560140813337">
               <img className={styles.vectorIcon} alt="facebook" src="/vector-7.svg" />
-              
+              </Link>
               <img className={styles.vectorIcon2} alt="whatsapp" src="/vector-9.svg" />
               <div className={styles.frameWrapper}>
                 <div className={styles.vectorGroup}>
@@ -93,11 +94,14 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
                       alt=""
                       src="/vector-11.svg"
                     />
+                    <Link href="https://www.instagram.com/trust.your.guru?fbclid=IwZXh0bgNhZW0CMTAAAR0UHG1RGZUMrWnLr2p1aQDl4hq5Xlgoj4ENpi29Aeqd24h-8NM6qzhDMCU_aem_ZmFrZWR1bW15MTZieXRlcw">
+                    
                     <img
                       className={styles.vectorIcon5}
                       alt="instagram"
                       src="/vector-12.svg"
                     />
+                    </Link>
                   </div>
                 </div>
               </div>
