@@ -73,6 +73,9 @@ const handleSubmit = async (e) => {
 
       if (!courseOptions && !languageOptions && !profileImg) {
         setPopup(true);
+      }else{
+      router.push("/courses");
+
       }
     }
 
