@@ -94,20 +94,20 @@ const Nav = () => {
           space-y-5 font-normal bg-dark-blue text-white sm:w-auto sm:self-center left-0 right-0 drop-shadow-md"
         >
           <Anchor text='Home' link="/" />
-          <Anchor text='FAQ' link="/faq" />
           <Anchor text='Chi Siamo' link="/about-us" />
+          <Anchor text='FAQ' link="/faq" />
   
           {isAuthenticated ? ( 
             <button 
               onClick={handleLogout} 
-              className="lg:w-[120px] md:w-[80px] h-[40px] rounded-[2px] bg-white text-light-blue text-[15px] font-normal flex items-center justify-center"
+              className="lg:w-[120px] md:w-[80px] h-[40px] rounded-[2px] bg-white text-light-blue text-[15px] font-normal px-4 flex items-center justify-center"
             >
               Logout
             </button>
           ) : (
             <Link 
               href="/login"  
-              className="lg:w-[120px] md:w-[80px] h-[40px] rounded-md bg-whitee text-light-blue text-[15px] font-normal flex items-center justify-center"
+              className="lg:w-[120px] md:w-[80px] h-[40px] rounded-md bg-whitee text-light-blue text-[15px] font-normal px-4 flex items-center justify-center"
             >
               Log In
             </Link>

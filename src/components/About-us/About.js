@@ -2,18 +2,16 @@ import React from 'react';
 
 const content = {
   mission: {
-    title: "Our Mission",
     text: "La nostra missione è rivoluzionare il mondo del coaching fornendo una piattaforma che crei relazioni tra coach appassionati e persone in cerca di crescita.",
     image: "/chi-siamo1.png" // Placeholder image for mission
   },
   quote: {
-    text: "“Un pianeta migliore è un sogno che inizia a realizzarsi quando ognuno di noi decide di migliorare se stesso.” L’impegno di TrustYourGuru è di contribuire ad un mondo fatto di sogni, passione e collaborazioni.",
+    text: "“Un pianeta migliore è un sogno che inizia a realizzarsi quando ognuno di noi decide di migliorare se stesso.”",
     author: "Mahatma Gandhi",
     image: "/chi-siamo2.png" // Placeholder image for quote
   },
  
   vision: {
-    title: "Our Vision",
     text: "Vogliamo essere il marketplace di fiducia per gli studenti di tutto il mondo, aiutandoli a raggiungere il loro pieno potenziale. Al contempo, aspiriamo a trasformare le vite dei nostri coach, offrendo loro gli strumenti e il supporto necessari per realizzare i loro obiettivi e vivere una vita più soddisfacente e realizzata.",
     image: "/chi-siamo3.png" // Placeholder image for vision
   }
@@ -58,9 +56,7 @@ const AboutUsPage = () => {
                 {idx % 2 === 0 ? (
                   <>
                     <div className="lg:w-1/2">
-                      {section.title && (
-                        <h2 className="text-xl font-semibold text-gray-900 mb-2">{section.title}</h2>
-                      )}
+                     
                       <p
                         className="text-gray-900 mb-4 text-xl"
                         dangerouslySetInnerHTML={{ __html: formatText(section.text) }}
@@ -79,9 +75,7 @@ const AboutUsPage = () => {
                 ) : (
                   <>
                     <div className="lg:w-1/2 lg:order-2">
-                      {section.title && (
-                        <h2 className="text-xl font-semibold text-gray-900 mb-2">{section.title}</h2>
-                      )}
+                     
                       <p
                         className="text-gray-900 mb-4 text-xl"
                         dangerouslySetInnerHTML={{ __html: formatText(section.text) }}
