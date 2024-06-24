@@ -54,8 +54,8 @@ const Nav = () => {
         {/* Menu Items */}
         <div className="hidden space-x-[31px] md:flex xl:text-lg xxs:text-sm font-medium text-white">
           <Anchor text='Home' link="/" />
-          <Anchor text='FAQ' link="/faq" />
           <Anchor text='Chi Siamo' link="/about-us" />
+          <Anchor text='FAQ' link="/faq" />
         </div>
   
         {/* Button */}
