@@ -390,7 +390,7 @@ const handleSubmitProfile = async (e) => {
             </label>
           </div>
           <div className="text-sm">
-            <a href="#" className="font-medium text-blue hover:underline cursor-pointer">
+            <a href="/find-email" className="font-medium text-blue hover:underline cursor-pointer">
               Hai dimenticato la password?
             </a>
           </div>

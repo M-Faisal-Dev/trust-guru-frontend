@@ -7,11 +7,12 @@ export const api = `${root}/api/`
 // 
 export const routes = {
    
-    // car listing api 
     register: `${api}register`,
     login: `${api}login`,
     logout: `${api}logout`,
     updateUserProfile: `${api}updateProfile`,
+    findEmail: `${api}find-email`,
+    resetPassword: `${api}reset-password`,
 
     // for creating course 
     createCourse: `${api}course/create`,

@@ -86,7 +86,7 @@ function Page() {
                 onChange={handleChange}
                 required>
                 <option value="">Tipo di Utente</option>
-                <option value="Teacher">coaches</option>
+                <option value="Teacher">allenatori</option>
                 <option value="Student">Studente</option>
               </select>
             </div>
