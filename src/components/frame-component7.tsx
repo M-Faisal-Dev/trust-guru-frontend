@@ -71,12 +71,9 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
                 smoothVirtualLive={data.features[1].title}
                 
               />
-                  <div className={styles.sectionEdhen2}>
+                  <div className={styles.sectionEdhen1}>
             <p className="text-lg md:hidden block"> <strong>Ogni coach dà il massimo</strong> per ottenere il miglior punteggio e <strong> scalare la propria classifica.</strong> </p>  
               </div>
-
-
-
 
             </div>
 
@@ -99,8 +96,8 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
                   <Link href="/login" className={styles.quickJoinNow}>{data.quickJoinText}</Link>
                 </button>
               </div>
-              <div className={`${styles.sectionEdhen2} hidden md:block`}>
-            <p className="text-lg mt-9 hidden md:block"> <strong>Ogni coach dà il massimo</strong> per ottenere il miglior punteggio e <strong> scalare la propria classifica.</strong> </p>  
+              <div className={`${styles.sectionEdhen2}`}>
+            <p className="text-lg mt-9 md:block hidden"> <strong>Ogni coach dà il massimo</strong> per ottenere il miglior punteggio e <strong> scalare la propria classifica.</strong> </p>  
               </div>
             </div>
           </div>
