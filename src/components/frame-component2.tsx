@@ -25,12 +25,12 @@ const data = {
               className={styles.frameItem}
               loading="lazy"
               alt=""
-              src="/group-29.svg"
+              src="/elena.jpg"
             />
             <div className={styles.frameWrapper}>
               <div className={styles.frameContainer}>
                 <div className={styles.heading2OliviaMiaParent}>
-                  <h3 className={styles.heading21}>Olivia Mia</h3>
+                  <h3 className={styles.heading21}>Elena Acatrinei</h3>
                   <div className={styles.webDesign}>Web Design</div>
                   <div className={styles.symbolParent}>
                     <div className={styles.symbol}></div>
@@ -59,42 +59,40 @@ const data = {
             <div className={styles.vectorWrapper}>
               <img className={styles.vectorIcon} alt="" src="/vector-1.svg" />
             </div>
-            <button className={styles.group17Button}>
-              <img
-                className={styles.instructorNav01pngIcon}
+            <img
+                className={styles.group27Button}
                 alt=""
-                src="/instructor-nav01png@2x.png"
+                src="/alessia.jpg"
               />
-            </button>
             <img
               className={styles.group27Button}
               loading="lazy"
               alt=""
-              src="/group--2--7--button@2x.png"
+              src="/tiziano.jpg"
             />
             <img
               className={styles.group37Button}
               loading="lazy"
               alt=""
-              src="/group--3--7--button@2x.png"
+              src="/loram.jpg"
             />
             <img
               className={styles.group47Button}
               loading="lazy"
               alt=""
-              src="/group--4--7--button@2x.png"
+              src="/elisa.jpg"
             />
             <img
               className={styles.group57Button}
               loading="lazy"
               alt=""
-              src="/group--5--7--button@2x.png"
+              src="/marco.jpg"
             />
             <img
               className={styles.group67Button}
               loading="lazy"
               alt=""
-              src="/group--4--7--button@2x.png"
+              src="/elenamasala.jpg"
             />
             <div className={styles.vectorContainer}>
               <img className={styles.vectorIcon1} alt="" src="/vector-2.svg" />

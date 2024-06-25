@@ -225,4 +225,12 @@
     font-size: var(--font-size-3xl);
     line-height: 29px;
   }
+   .desktop1Inner {
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .sectionEdhen2 {
+    display: none;
+  }
 }

@@ -7,7 +7,7 @@ const content = {
   },
   quote: {
     text: "“Un pianeta migliore è un sogno che inizia a realizzarsi quando ognuno di noi decide di migliorare se stesso.”",
-    author: "Mahatma Gandhi",
+    author: "M. Ghandhi",
     image: "/chi-siamo2.png" // Placeholder image for quote
   },
  
@@ -76,10 +76,18 @@ const AboutUsPage = () => {
                   <>
                     <div className="lg:w-1/2 lg:order-2">
                      
+
+                      <h2 className='text-lg font-semibold'>{section.author}</h2>
                       <p
                         className="text-gray-900 mb-4 text-xl"
                         dangerouslySetInnerHTML={{ __html: formatText(section.text) }}
                       ></p>
+
+<button className="mt-2 px-6 py-2 bg-blue text-white rounded-md shadow-md hover:bg-blue-600">
+ISCRIVITI
+                    </button>
+
+
                     </div>
                     <div className="lg:w-1/2 lg:order-1">
                       {section.image && (

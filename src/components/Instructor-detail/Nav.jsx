@@ -42,7 +42,7 @@ const Nav = () => {
         {/* Logo */}
         <div className="">
       <Image 
-        className="absolute z-9999 -top-4 left-0 w-13 h-13 md:w-18 md:h-18"
+        className="absolute z-9999 -top-4 left-[40%] sm:left-0 w-13 h-13 md:w-18 md:h-18"
         alt="logo"
         src="/logo.jpg"
         quality={100}

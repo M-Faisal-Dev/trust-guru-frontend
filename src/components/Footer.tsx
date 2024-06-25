@@ -29,15 +29,75 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
       <div className={styles.rectangleParent}>
         <div className={styles.frameChild} />
         <div className={styles.trustYourGuruParent}>
-          <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>
+          <div>
+
+          <h2 className={`${styles.trustYourGuru} md:block hidden`}>Trust Your Guru</h2>
+          </div>
           <div className={styles.loremIpsumHasBeenTheIndusParent}>
-            <div className={styles.loremIpsumHasBeen}>
+        
+
+<div className="md:block hidden">
+<div className={styles.loremIpsumHasBeen}>
               {data.subheading}
             </div>
-            <div className={styles.listItem4637thAveNyParent}>
+
+
+<div className={styles.listItem4637thAveNyParent}>
               <div className={styles.listItem}>A&A Dealing LLC</div>
               <div className={styles.listItem}>16192 Coastal Highway, Lewes, Delaware 19958</div>
             </div>
+
+</div>
+
+
+<div className="block md:hidden">
+
+         
+<div className={styles.heading4Container}>
+  <div className={styles.heading44} />
+
+
+
+
+ <div className={styles.heading4GetInTouchWrapper}>
+    <h3 className={`${styles.heading45}`}>
+
+
+
+    <div className={`${styles.vectorParent} space-x-3 flex justify-center`}>
+    <Link href="https://www.facebook.com/profile.php?id=61560140813337">
+    <FaFacebookF />
+    </Link>
+    <RiWhatsappFill />
+
+
+    <Link href="https://www.instagram.com/trust.your.guru?fbclid=IwZXh0bgNhZW0CMTAAAR0UHG1RGZUMrWnLr2p1aQDl4hq5Xlgoj4ENpi29Aeqd24h-8NM6qzhDMCU_aem_ZmFrZWR1bW15MTZieXRlcw">
+          
+          <IoLogoInstagram />
+          </Link>
+
+
+  </div>
+      
+      </h3>
+  
+
+ </div>
+  
+</div>
+
+<div className={`${styles.loremIpsumHasBeen1} mt-4`}>
+ {data.listItem8}
+</div>
+
+
+</div>
+
+
+
+
+
+
           </div>
         </div>
         <div className={styles.heading4UsefulLinksParent}>
@@ -70,9 +130,18 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
           </div>
         </div>
         <div className={styles.frameGroup}>
+
+          <div className=" md:block hidden">
+
+         
+
           <div className={styles.heading4Container}>
             <div className={styles.heading44} />
-            <div className={styles.heading4GetInTouchWrapper}>
+
+
+
+         
+           <div className={styles.heading4GetInTouchWrapper}>
               <h3 className={`${styles.heading45}`}>
 
 
@@ -93,12 +162,30 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
             </div>
                 
                 </h3>
-            </div>
+            
+
+           </div>
+            
           </div>
          
-          <div className={styles.loremIpsumHasBeen1}>
+          <div className={`${styles.loremIpsumHasBeen1} mt-4`}>
            {data.listItem8}
           </div>
+
+
+          </div>
+
+          <div className="block md:hidden">
+         
+
+<div className={styles.listItem4637thAveNyParent}>
+<div className={styles.loremIpsumHasBeen}>
+              {data.subheading}
+            </div>
+              <div className={styles.listItem}>A&A Dealing LLC</div>
+              <div className={styles.listItem}>16192 Coastal Highway, Lewes, Delaware 19958</div>
+            </div>
+</div>
 
           <div className={styles.frameContainer}>
           <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>

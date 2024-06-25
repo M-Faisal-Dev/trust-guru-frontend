@@ -60,7 +60,7 @@ function Page() {
 
           <form className="space-y-2 md:space-y-4" action="#" onSubmit={handleSubmit}>
             <div>
-              <input type="text" name="fullName" id="fullName" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" placeholder="Nome"
+              <input type="text" name="fullName" id="fullName" className="bg-gray-50 text-gray-900 sm:text-base rounded-sm shadow-md border-gray-100 border focus:ring-1 outline-none block w-full p-2.5" placeholder="Nome e cognome"
                 value={formData.fullName}
                 onChange={handleChange}
                 required />
@@ -86,7 +86,7 @@ function Page() {
                 onChange={handleChange}
                 required>
                 <option value="">Tipo di Utente</option>
-                <option value="Teacher">Insegnante</option>
+                <option value="Teacher">coaches</option>
                 <option value="Student">Studente</option>
               </select>
             </div>

@@ -8,16 +8,7 @@ import Cources3 from "@/components/frame-component2";
 import Cources4 from "@/components/frame-component1";
 import AboutUs from "@/components/About-us/About"
 
-
-
-
 import Teacher from "@/components/frame-component5";
-
-
-
-
-
-
 
 
 

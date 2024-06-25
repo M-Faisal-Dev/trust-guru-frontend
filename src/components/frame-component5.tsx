@@ -24,7 +24,7 @@ const data = {
    
   <div className = "flex md:flex-row flex-col items-center justify-center">
   <div className="flex flex-col justify-center  md:w-2/5 p-4">
-        <div className="mb-4 text-2xl font-medium  text-blue">{data.heading}</div>
+        <div className="mb-4 text-xl md:text-2xl font-medium  text-blue">{data.heading}</div>
         <h2 className="mb-4 text-2xl font-semibold text-blue-600">{data.heading2}</h2>
         <div className="mb-4 text-xl font-medium ">
           
@@ -43,11 +43,11 @@ const data = {
             {/* Card 1 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="/section--link--instructor01png@2x.png" alt="img" className="object-cover w-full h-full" />
+                <img src="/loram.jpg" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
-                <div className="styles.sectionWeb">UX Design Lead</div>
+                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Lorenzo Armentano</div>
+                <div className={styles.sectionWeb}>UX Design Lead</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>
                 </div>
@@ -57,11 +57,11 @@ const data = {
             {/* Card 2 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="/section--link--instructor02png@2x.png" alt="img" className="object-cover w-full h-full" />
+                <img src="/elisa.jpg" alt="img" className="object-contain w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
-                <div className={styles.sectionWeb}>UX Design Lead</div>
+                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Elisa Montagni</div>
+                <div className={styles.sectionWeb}>Yoga Teacher</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>
                 </div>
@@ -73,10 +73,10 @@ const data = {
             {/* Card 3 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="/section--link--instructor03png@2x.png" alt="img" className="object-cover w-full h-full" />
+                <img src="/marco.jpg" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Marco Romano</div>
                 <div className={styles.sectionWeb}>UX Design Lead</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>
@@ -87,10 +87,10 @@ const data = {
             {/* Card 4 */}
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
-                <img src="/section--link--instructor04png@2x.png" alt="img" className="object-cover w-full h-full" />
+                <img src="/elenamasala.jpg" alt="img" className="object-cover w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Mark Jukarberg</div>
+                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Elena Masala</div>
                 <div className={styles.sectionWeb}>UX Design Lead</div>
                 <div className={styles.section48Container}>
                   <span>(192 TRUST POINTS)</span>

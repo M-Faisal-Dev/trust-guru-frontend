@@ -236,7 +236,7 @@
 }
 @media screen and (max-width: 450px) {
   .sectionHeading {
-    font-size: var(--font-size-3xl);
+    font-size: 28px;
     line-height: 29px;
   }
   .frameGroup {

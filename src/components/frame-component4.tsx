@@ -21,14 +21,14 @@ const data = {
             </div>
             <div className={styles.heading2ExploreOurWorldParent}>
               <p className={styles.heading2}>
-              I piu’ scelti.
+              {data.subheading}
               
               </p>
-              <div className={styles.whenKnownPrinterTookAGallWrapper}>
+              {/* <div className={styles.whenKnownPrinterTookAGallWrapper}>
                 <div className={styles.whenKnownPrinter}>
                 {data.subheading}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
