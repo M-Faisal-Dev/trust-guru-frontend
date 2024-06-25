@@ -31,7 +31,7 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
         <div className={styles.trustYourGuruParent}>
           <div>
 
-          <h2 className={`${styles.trustYourGuru} md:block hidden`}>Trust Your Guru</h2>
+          <h2 className={`${styles.trustYourGuru}`}>TrustYourGuru</h2>
           </div>
           <div className={styles.loremIpsumHasBeenTheIndusParent}>
         
@@ -188,7 +188,7 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
 </div>
 
           <div className={styles.frameContainer}>
-          <h2 className={styles.trustYourGuru}>Trust Your Guru</h2>
+          <h2 className={styles.trustYourGuru}>TrustYourGuru</h2>
          
             <div className={styles.frameDiv}>
               <div className={styles.vectorParent1}>
