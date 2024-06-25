@@ -188,7 +188,9 @@ const FrameComponent: NextPage<FrameComponentType> = ({ className = "" }) => {
 </div>
 
           <div className={styles.frameContainer}>
+            <div className="hidden md:block">
           <h2 className={styles.trustYourGuru}>TrustYourGuru</h2>
+            </div>
          
             <div className={styles.frameDiv}>
               <div className={styles.vectorParent1}>
