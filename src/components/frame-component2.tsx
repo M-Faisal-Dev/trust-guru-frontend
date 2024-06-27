@@ -44,11 +44,7 @@ const data = {
                   </div>
                 </div>
                 <div className={styles.loremIpsumHasBeen}>
-                  Lorem Ipsum has been the industrys standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it. Lorem Ipsum has been the industrys standard
-                  dummy text ever since the 1500s, when an unknown printer took
-                  a galley of type and scrambled it to make a type...
+                TrustYourGuru mi è stato d’aiuto nella ricerca di un personal trainer competente che mi aiutasse a raggiungere i risultati desiderati.
                 </div>
               </div>
             </div>
