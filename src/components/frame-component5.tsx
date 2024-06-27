@@ -63,7 +63,7 @@ const data = {
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Elisa Montagni</div>
                 <div className={styles.sectionWeb}>Yoga Teacher</div>
                 <div className={styles.section48Container}>
-                  <span>(192 TRUST POINTS)</span>
+                  <span>(189 TRUST POINTS)</span>
                 </div>
               </div>
             </Link>
@@ -77,9 +77,9 @@ const data = {
               </div>
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Marco Romano</div>
-                <div className={styles.sectionWeb}>UX Design Lead</div>
+                <div className={styles.sectionWeb}>Principles of Marketing</div>
                 <div className={styles.section48Container}>
-                  <span>(192 TRUST POINTS)</span>
+                  <span>(188 TRUST POINTS)</span>
                 </div>
               </div>
             </Link>
@@ -91,9 +91,9 @@ const data = {
               </div>
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">Elena Masala</div>
-                <div className={styles.sectionWeb}>UX Design Lead</div>
+                <div className={styles.sectionWeb}>Project Management</div>
                 <div className={styles.section48Container}>
-                  <span>(192 TRUST POINTS)</span>
+                  <span>(187 TRUST POINTS)</span>
                 </div>
               </div>
             </Link>
