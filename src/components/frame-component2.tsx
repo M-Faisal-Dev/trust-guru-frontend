@@ -33,14 +33,9 @@ const data = {
                   <h3 className={styles.heading21}>Elena Acatrinei</h3>
                   <div className={styles.webDesign}>Web Design</div>
                   <div className={styles.symbolParent}>
-                    <div className={styles.symbol}></div>
-                    <div className={styles.symbol1}></div>
-                    <div className={styles.symbol2}></div>
-                    <div className={styles.symbol3}></div>
-                    <div className={styles.symbolWrapper}>
-                      <div className={styles.symbol4}></div>
-                    </div>
-                    <div className={styles.ratings}>(4.8 Ratings)</div>
+                    
+                    
+                    <div className={styles.ratings}>(TRUST POINTS 192)</div>
                   </div>
                 </div>
                 <div className={styles.loremIpsumHasBeen}>
