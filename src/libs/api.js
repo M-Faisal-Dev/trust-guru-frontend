@@ -13,6 +13,7 @@ export const routes = {
     updateUserProfile: `${api}updateProfile`,
     findEmail: `${api}find-email`,
     resetPassword: `${api}reset-password`,
+    getSingleUser: `${api}single-user`,
 
     // for creating course 
     createCourse: `${api}course/create`,
@@ -25,7 +26,9 @@ export const routes = {
     teacher: `${api}teacher-profile`,
     getAllTeachers: `${api}teacher-profile`,
     getSingleTeacher: `${api}teacher-profile`,
+    getSingleTeacherbyToken: `${api}teacher-profile/get-single-teacher`,
     updateTeacher: `${api}teacher-profile`,
+    updateTeacherSkills: `${api}teacher-profile/update-skills`,
     bankDetails: `${api}teacher-profile/update-back-details`,
 
     // msg api 

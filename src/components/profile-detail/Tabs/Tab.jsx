@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Label from './Label';
 import Input from './Input'; // Ensure the correct path to your Input component
 import axios from 'axios';
 import { routes } from "@/libs/api";
 import { handleProfileImageUpload } from "@/libs/uploadAsset";
 import { useAuth } from '@/Context/AuthContext';
+import {toast} from 'react-toastify';
 
 const Tab = () => {
+  const [teacherData, setTeacherData] = useState({
+    fullName: '',
+    profileImage: '',
+    about: '',
+    country: '',
+    city: '',
+    address: '',
+    zipCode: '',
+    phone: '',
+    email: '',
+    gender: '',
+    dob: '',
+  });
   const [formData, setFormData] = useState({
     fullName: '',
     profileImage: '',
@@ -21,10 +35,40 @@ const Tab = () => {
     dob: '',
  
   });
+  const [checkDataStatus, setCheckDataStatus] = useState(false)
   const { isAuthenticated, login, logout, userToken, getRefreshToken } = useAuth();
 
-  const [image, setImage] = useState(null);
+  const Token = getRefreshToken()
+  console.log(Token, "this is token")
 
+
+
+  useEffect(() => {
+    const fetchTeacherProfile = async () => {
+      try {
+        const response = await axios.get(routes.getSingleTeacherbyToken, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Token}`,
+          },
+        });
+        // Handle the response here
+        if(response.data){
+          setCheckDataStatus(true)
+          setTeacherData(response.data)
+        }
+       
+      } catch (error) {
+        setCheckDataStatus(false)
+        console.error(error);
+      }
+    };
+  
+    fetchTeacherProfile();
+  }, [Token]);
+
+
+  const [image, setImage] = useState(null);
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -42,8 +86,7 @@ const Tab = () => {
   };
 
 
-  const Token = getRefreshToken()
-  console.log(Token, "this is token")
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,8 +108,22 @@ const Tab = () => {
         },
       });
 
-      console.log(response.data)
+      setFormData({
+        fullName: '',
+        profileImage: '',
+        about: '',
+        country: '',
+        city: '',
+        address: '',
+        zipCode: '',
+        phone: '',
+        email: '',
+        gender: '',
+        dob: '',
+      })
 
+      toast.success("Your data has been submit successfully")
+      window.location.reload();
     } catch (error) {
       console.error('An error occurred:', error);
       // Handle the error appropriately
@@ -74,9 +131,14 @@ const Tab = () => {
   };
 
   return (
+
 <div className='shadow-neons 2xl:px-[50px] xl:px-10 xxs:px-5'>
-  <h1 className='text-skyblue text-xl font-medium pt-[59px]'>Immagine del Profilo</h1>
+  <h1 className='text-skyblue text-xl font-semibold pt-[59px]'>Immagine del Profilo</h1>
   <div className='grid place-content-center'>
+
+
+
+  { checkDataStatus == false  ? (
     <div className='relative w-32 h-32'>
       {image ? (
         <img
@@ -105,9 +167,21 @@ const Tab = () => {
         onChange={handleImageUpload}
       />
       <img src="/upload.svg" alt="Carica" className='absolute right-2 bottom-2 w-8 h-8 pointer-events-none' />
-    </div>
+    </div>) : (<div className='relative w-32 h-32'>
+     
+        <img
+          className="w-full h-full object-cover rounded-full"
+          src={teacherData?.profileImage}
+          alt="Profilo caricato"
+        />
+     
+    </div>)
+}
+
+
   </div>
-  <form onSubmit={handleSubmit} className='mt-[49px]'>
+
+{ checkDataStatus == false ? (<form onSubmit={handleSubmit} className='mt-[49px]'>
     <div className='flex sm:flex-row xxs:flex-col sm:items-center sm:gap-0 xxs:gap-2 justify-between'>
       <Label labeltext='Nome e Cognome' />
       <Input name="fullName" value={formData.fullName} onChange={handleChange} placeholder='Lorenzo Armentano' />
@@ -194,7 +268,57 @@ const Tab = () => {
     <div className='py-[30px] grid place-items-center'>
       <button type="submit" className='w-[199px] h-[44px] rounded-[3px] bg-light-blue text-whitee text-xl font-normal'>Salva le Modifiche</button>
     </div>
-  </form>
+  </form>) : (
+    <div className="container mx-auto pt-4 pb-11 px-4">
+    
+    {teacherData && (
+      <div className="grid grid-cols-1 text-lg md:grid-cols-2 gap-4">
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Full Name:</span>
+          <span>{teacherData.fullName}</span>
+        </div>
+        <div className="flex flex-col md:col-span-2">
+          <span className="font-semibold text-xl">About:</span>
+          <span>{teacherData.about}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Country:</span>
+          <span>{teacherData.country}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">City:</span>
+          <span>{teacherData.city}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Address:</span>
+          <span>{teacherData.address}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">ZIP Code:</span>
+          <span>{teacherData.zipCode}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Phone:</span>
+          <span>{teacherData.phone}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Email:</span>
+          <span>{teacherData.email}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Gender:</span>
+          <span>{teacherData.gender}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">Date of Birth:</span>
+          <span>{new Date(teacherData.dob).toLocaleDateString()}</span>
+        </div>
+        
+      </div>
+    )}
+  </div>
+  
+  ) }
 </div>
 
 

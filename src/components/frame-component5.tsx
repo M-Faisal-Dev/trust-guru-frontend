@@ -3,14 +3,10 @@ import FrameComponent6 from "./frame-component6";
 import styles from "./frame-component5.module.css";
 import Link from "next/link"
 
-export type FrameComponent5Type = {
-  className?: string;
-};
 
 
-
-
-const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
+const FrameComponent5 = ({props}: any) => {
+  console.log(props, "this is is faisal i live in pakistan")
 
 const data = {
   heading: "UN SOCIAL MARKETPLACE PER TE.",
@@ -37,10 +33,10 @@ const data = {
         </div>
       </div>
   
-      <div className="flex items-center justify-center text-center ">
+      {/* <div className="flex items-center justify-center text-center ">
         <div className="flex flex-col p-2 m-2 w-full">
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-2">
-            {/* Card 1 */}
+
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
                 <img src="/loram.jpg" alt="img" className="object-cover w-full h-full" />
@@ -54,7 +50,7 @@ const data = {
               </div>
             </Link>
   
-            {/* Card 2 */}
+    
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
                 <img src="/elisa.jpg" alt="img" className="object-contain w-full h-full" />
@@ -70,7 +66,7 @@ const data = {
           </div>
   
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-2 mt-4">
-            {/* Card 3 */}
+   
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
                 <img src="/marco.jpg" alt="img" className="object-cover w-full h-full" />
@@ -84,7 +80,7 @@ const data = {
               </div>
             </Link>
   
-            {/* Card 4 */}
+         
             <Link href="/instructor/details" className="flex items-center space-x-2 px-6 py-2 w-full md:w-auto">
               <div className="md:h-40 h-28 w-28 md:w-40 rounded-full overflow-hidden bg-gray-200">
                 <img src="/elenamasala.jpg" alt="img" className="object-cover w-full h-full" />
@@ -99,7 +95,28 @@ const data = {
             </Link>
           </div>
           </div>
-          </div>
+          </div> */}
+
+<div className="flex flex-wrap justify-evenly sm:w-[70%] w-[80%]">
+      {props.map((instructor: any) => (
+        <div key={instructor._id} className="flex flex-col items-center space-y-4 p-2 m-2 w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-[40%]">
+          <Link href={`/instructor/${instructor._id}`} passHref>
+            <div className="flex items-center space-x-2 w-full">
+            <div className=" h-28 w-28  rounded-full overflow-hidden bg-gray-200">
+                <img src={instructor.profileImage} alt="Instructor" className="object-cover w-full h-full" />
+              </div>
+            
+              <div className="flex flex-col">
+                <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">{instructor.fullName}</div>
+                <div className={styles.section48Container}>
+                  <span>(192 TRUST POINTS)</span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </div>
   </div>
    
           

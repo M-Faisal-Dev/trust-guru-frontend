@@ -11,15 +11,36 @@ import AboutUs from "@/components/About-us/About"
 import Teacher from "@/components/frame-component5";
 
 
+async function getData() {
+  try {
+    const res = await fetch('https://backend.trustyourguru.com/api/teacher-profile?page=1&limit=4');
+    return res.json();
+  } catch (error) {
+    // Handle the error, log it, or throw it further if needed
+    console.error('An error occurred while fetching data:');
+    throw error; // Re-throwing the error to be caught by the caller
+  }
+}
 
 
-export default function Home() {
+
+export default async function page() {
+  let data;
+
+  try {
+    data = await getData();
+  } catch (error) {
+    console.error('An error occurred while fetching data:');
+    data = []; // Fallback to empty array in case of error
+  }
+
+
   return (
    <main className="overflow-hidden">
 
     <Banner/>
     <Main/>
-    <Teacher/>
+   <Teacher props={data} />
     <Cources/>
     <Cources1/>
     <Cources3/>

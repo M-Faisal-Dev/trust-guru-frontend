@@ -2,7 +2,7 @@ import React from 'react';
 import Head from './Head';
 import Tablebody from './Tablebody';
 
-const Lorenzo = () => {
+const Lorenzo = ({props}) => {
   return (
     <div className='xl:px-0 xxs:px-5'>
     <div className='max-w-[1136px] lg:px-[50px] md:px-6 xxs:px-5 mx-auto bg-whitee shadow-neon rounded-[10px] pb-[38px]
@@ -10,23 +10,20 @@ const Lorenzo = () => {
       <div className='flex sm:flex-row xxs:flex-col sm:items-start xxs:items-center gap-[45px] w-full'>
         {/* one */}
         <div>
-          <img src="/smiling.png" alt="smiling" />
+          <img src={props.profileImage} className='rounded-full w-44 h-36 border' alt="smiling" />
         </div>
         {/* two */}
         <div className='w-full'>
-          <div className='flex   justify-between'>
+          <div className='flex justify-between'>
             <div>
-              <h2 className='text-black md:text-2xl sm:text-xl xxs:text-lg font-medium'>Lorenzo Armentano</h2>
-              <p className='text-black text-base font-normal pt-2'>Expert Laravel Pro</p>
+              <h2 className='text-black md:text-2xl sm:text-xl xxs:text-lg font-medium'>{props.fullName}</h2>
             </div>
             <div>
               <img src="/message.svg" alt="message" />
             </div>
           </div>
-          <p className='text-black md:text-base xxs:text-sm font-light pt-[36px] max-w-[671px]'>
-            Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur Vesity
-            bulum a nec odio aea the dumm ipsumm ipsum that dolocons sus suada and farit
-            consectetur elit.
+          <p className='text-black md:text-base xxs:text-sm font-light pt-[28px] max-w-[671px]'>
+            {props.about}
           </p>
         </div>
       </div>
@@ -45,11 +42,11 @@ const Lorenzo = () => {
           <tbody>
             <tr className="bg-whitee shadow-neon">
               <Tablebody tablebody='01' />
-              <Tablebody tablebody='Lorenzo Armentano' />
-              <Tablebody tablebody='192' />
-              <Tablebody tablebody='24' />
-              <Tablebody tablebody='7.1' />
-              <Tablebody tablebody='27' />
+              <Tablebody tablebody={props.fullName} />
+              <Tablebody tablebody={props.totalPoints} />
+              <Tablebody tablebody={props.lastMonth} />
+              <Tablebody tablebody={props.averageScore} />
+              <Tablebody tablebody={props.numClients} />
             </tr>
           </tbody>
         </table>

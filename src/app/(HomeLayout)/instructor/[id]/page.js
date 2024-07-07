@@ -6,16 +6,37 @@ import Lorenzo from '@/components/Instructor-detail/Lorenzo';
 import {Faisal} from '@/components/Instructor-detail/Faisal';
 // import Footer from '../components/Footer';
 
-const page = () => {
+async function getData(id) {
+  try {
+    const res = await fetch(`https://backend.trustyourguru.com/api/teacher-profile/${id}`);
+    return res.json();
+  } catch (error) {
+    // Handle the error, log it, or throw it further if needed
+    console.error('An error occurred while fetching data:');
+    throw error; // Re-throwing the error to be caught by the caller
+  }
+}
+
+export default async function page({ params }) {
+ const {id} = params;
+  let data;
+
+  try {
+    data = await getData(id);
+  } catch (error) {
+    console.error('An error occurred while fetching data:');
+    data = []; // Fallback to empty array in case of error
+  }
+  console.log(data)
   return (
     <div>
       {/* <Nav /> */}
       <Hero />
-       <Lorenzo />
-      <Faisal /> 
+       <Lorenzo props = {data}/>
+      <Faisal props = {data} /> 
       {/* <Footer /> */}
     </div>
   );
 }
 
-export default page;
+
