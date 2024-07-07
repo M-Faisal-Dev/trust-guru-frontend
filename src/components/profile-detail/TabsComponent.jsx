@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Tab from './Tabs/Tab';
 import BankInfo from './Tabs/Bank-info';
-import Biography from './Tabs/skill-biography';
+import Biography from './Tabs/Skill-biography';
 import { CiBank } from "react-icons/ci";
 import Link from "next/link";
 import { routes } from "@/libs/api";
