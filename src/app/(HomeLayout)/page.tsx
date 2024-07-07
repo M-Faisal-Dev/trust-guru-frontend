@@ -13,7 +13,7 @@ import Teacher from "@/components/frame-component5";
 
 async function getData() {
   try {
-    const res = await fetch('https://backend.trustyourguru.com/api/teacher-profile?page=1&limit=4');
+    const res = await fetch('https://backend.trustyourguru.com/api/teacher-profile?page=1&limit=4', { cache: 'no-store' });
     return res.json();
   } catch (error) {
     // Handle the error, log it, or throw it further if needed

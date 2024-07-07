@@ -8,7 +8,7 @@ import {Faisal} from '@/components/Instructor-detail/Faisal';
 
 async function getData(id) {
   try {
-    const res = await fetch(`https://backend.trustyourguru.com/api/teacher-profile/${id}`);
+    const res = await fetch(`https://backend.trustyourguru.com/api/teacher-profile/${id}`, { cache: 'no-store' });
     return res.json();
   } catch (error) {
     // Handle the error, log it, or throw it further if needed
