@@ -56,3 +56,4 @@ const handleThumbnailImageUpload = async (image) => {
 };
 
 export { handleProfileImageUpload, handleCoverImageUpload, handleThumbnailImageUpload };
+
