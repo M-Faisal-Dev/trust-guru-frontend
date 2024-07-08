@@ -1,5 +1,5 @@
-// const root = "http://localhost:4000"
-const root = "https://backend.trustyourguru.com"
+const root = "http://localhost:4000"
+// const root = "https://backend.trustyourguru.com"
 
 
 

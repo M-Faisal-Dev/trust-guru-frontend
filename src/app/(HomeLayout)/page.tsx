@@ -23,15 +23,34 @@ async function getData() {
 }
 
 
+async function getAdditionalData() {
+  try {
+    // const res = await fetch('https://backend.trustyourguru.com/api/course?page=1&limit=4', { cache: 'no-store' });
+    const res = await fetch('http://localhost:4000/api/course?page=1&limit=4', { cache: 'no-store' });
+    return res.json();
+  } catch (error) {
+    console.error('An error occurred while fetching additional data:');
+    throw error;
+  }
+}
+
 
 export default async function page() {
   let data;
+  let additionalData;
 
   try {
     data = await getData();
   } catch (error) {
     console.error('An error occurred while fetching data:');
     data = []; // Fallback to empty array in case of error
+  }
+
+  try {
+    additionalData = await getAdditionalData();
+  } catch (error) {
+    console.error('An error occurred while fetching additional data:');
+    additionalData = []; // Fallback to empty array in case of error
   }
 
 
@@ -42,7 +61,7 @@ export default async function page() {
     <Main/>
    <Teacher props={data} />
     <Cources/>
-    <Cources1/>
+    <Cources1 props={additionalData}/>
     <Cources3/>
     <Cources4/>
     {/* <Cources5/> */}
