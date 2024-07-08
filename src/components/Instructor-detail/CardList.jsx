@@ -43,7 +43,7 @@ const CardList = ({course}) => {
                     author={card.author}
                     description={card.courseDescription}
                     price={card.totalPrice}
-                    id={card.id}
+                    id={card._id}
                 />
             ))}
         </div>
