@@ -72,10 +72,10 @@ const handleSubmit = async (e) => {
       const { courseOptions, languageOptions, profileImg } = res.data;
 
       if (!courseOptions && !languageOptions && !profileImg) {
-        setPopup(true);
+        setPopup(false);
       }else{
-      router.push("/courses");
-
+      router.push("/Instructors");
+      setPopup(true);
       }
     }
 
