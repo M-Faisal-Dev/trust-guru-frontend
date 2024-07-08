@@ -10,7 +10,7 @@ const Lorenzo = ({props}) => {
       <div className='flex sm:flex-row xxs:flex-col sm:items-start xxs:items-center gap-[45px] w-full'>
         {/* one */}
         <div>
-          <img src={props.profileImage} className='rounded-full w-44 h-36 border' alt="smiling" />
+          <img src={props.profileImage} className='rounded-full sm:w-44 w-36 h-36 border' alt="smiling" />
         </div>
         {/* two */}
         <div className='w-full'>
@@ -18,9 +18,7 @@ const Lorenzo = ({props}) => {
             <div>
               <h2 className='text-black md:text-2xl sm:text-xl xxs:text-lg font-medium'>{props.fullName}</h2>
             </div>
-            <div>
-              <img src="/message.svg" alt="message" />
-            </div>
+           
           </div>
           <p className='text-black md:text-base xxs:text-sm font-light pt-[28px] max-w-[671px]'>
             {props.about}
