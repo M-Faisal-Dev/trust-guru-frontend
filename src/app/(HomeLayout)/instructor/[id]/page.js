@@ -9,6 +9,7 @@ import {Faisal} from '@/components/Instructor-detail/Faisal';
 async function getData(id) {
   try {
     const res = await fetch(`https://backend.trustyourguru.com/api/teacher-profile/${id}`, { cache: 'no-store' });
+    // const res = await fetch(`http://localhost:4000/api/teacher-profile/${id}`, { cache: 'no-store' });
     return res.json();
   } catch (error) {
     // Handle the error, log it, or throw it further if needed
@@ -17,8 +18,20 @@ async function getData(id) {
   }
 }
 
+
+async function getAdditionalData(id) {
+  try {
+    const res = await fetch(`https://backend.trustyourguru.com/api/course/get-by-token/${id}`, { cache: 'no-store' });
+    return res.json();
+  } catch (error) {
+    console.error('An error occurred while fetching additional data:', error);
+    throw error;
+  }
+}
+
 export default async function page({ params }) {
  const {id} = params;
+ let additionalData;
   let data;
 
   try {
@@ -28,12 +41,22 @@ export default async function page({ params }) {
     data = []; // Fallback to empty array in case of error
   }
 
+  
+  try {
+    additionalData = await getAdditionalData(id);
+  } catch (error) {
+    console.error('An error occurred while fetching additional data:');
+    additionalData = []; // Fallback to empty array in case of error
+  }
+
+  console.log(additionalData, "this is course data")
+
   return (
     <div>
       {/* <Nav /> */}
       <Hero />
        <Lorenzo props = {data}/>
-      <Faisal props = {data} /> 
+      <Faisal props = {data} couses = {additionalData} /> 
       {/* <Footer /> */}
     </div>
   );

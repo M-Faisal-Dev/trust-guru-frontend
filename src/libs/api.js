@@ -30,7 +30,8 @@ export const routes = {
     updateTeacher: `${api}teacher-profile`,
     updateTeacherSkills: `${api}teacher-profile/update-skills`,
     bankDetails: `${api}teacher-profile/update-back-details`,
-
+    createandUpdatePoints: `${api}teacher-profile/update-point`,
+   
     // msg api 
     getStudent: `${api}student-purchased-courses`,
     getTeacher: `${api}teacher-purchased-courses`,

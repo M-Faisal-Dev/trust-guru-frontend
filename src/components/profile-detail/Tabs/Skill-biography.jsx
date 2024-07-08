@@ -96,6 +96,32 @@ const Biography = () => {
     }
   };
 
+
+
+  const handleEdit = ()=>{
+    setCheckDataStatus(false)
+    const fetchTeacherProfile = async () => {
+      try {
+        const response = await axios.get(routes.getSingleTeacherbyToken, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Token}`,
+          },
+        });
+       
+          setCheckDataStatus(false)
+          setBioData(response.data)
+      
+      } catch (error) {
+        // Handle the error here
+        console.error(error);
+      }
+    };
+  
+    fetchTeacherProfile();
+  }
+
+
   return (
     <div className='shadow-neons 2xl:px-[50px] xl:px-10 xxs:px-5 py-10'>
       <h1 className='text-skyblue text-xl font-semibold pt-[59px]'>biografia&competenze</h1>
@@ -173,7 +199,12 @@ const Biography = () => {
        
      </div>
    ))}
+
  </div>
+
+ <div className='py-[30px] grid place-items-center'>
+      <button onClick={handleEdit} className='w-[232px] h-[44px] rounded-[3px] bg-light-blue text-whitee text-xl font-normal'>Modifica Informazioni</button>
+    </div>
 </div>
 
       )}

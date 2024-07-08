@@ -116,14 +116,14 @@ const Graphics = ({data}) => {
         comment
       };
 
-      // // Example endpoint URL where you want to send the data
-      // const endpoint = 'https://example.com/api/reviews';
-
-      // // Send POST request using Axios
-      // const response = await axios.post(endpoint, formData);
-
-      // Handle successful response
-      toast.success('Review submitted successfully!',);
+      const response = await axios.put(
+        `${routes.createandUpdatePoints}/${data._id}`,
+        {
+          ...formData 
+        }
+       
+      );
+      toast.success('Review submitted successfully!');
 
       // Reset form fields after submission (if needed)
       setSkills('');
@@ -134,9 +134,9 @@ const Graphics = ({data}) => {
     } catch (error) {
       // Handle error
       console.error('Error submitting review:', error);
+      toast.error('Failed to submit review.');
     }
   };
-
 
 
 

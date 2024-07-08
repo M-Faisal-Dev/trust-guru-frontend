@@ -81,6 +81,30 @@ const BankInfoForm = () => {
 
   };
 
+
+  const handleEdit = ()=>{
+    setCheckDataStatus(false)
+    const fetchTeacherProfile = async () => {
+      try {
+        const response = await axios.get(routes.getSingleUser, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Token}`,
+          },
+        });
+
+        setBankInfo(response.data)
+       
+      } catch (error) {
+        setCheckDataStatus(false)
+        console.error(error);
+      }
+    };
+  
+    fetchTeacherProfile();
+  }
+
+
   return (
   <div>
    { checkDataStatus === false ? ( <div className='shadow-neons 2xl:px-[50px] xl:px-10 xxs:px-5'>
@@ -125,6 +149,10 @@ const BankInfoForm = () => {
         
       </div>
     )}
+
+<div className='py-[30px] grid place-items-center'>
+      <button onClick={handleEdit} className='w-[232px] h-[44px] rounded-[3px] bg-light-blue text-whitee text-xl font-normal'>Modifica Informazioni</button>
+    </div>
   </div>
   
   )

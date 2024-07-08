@@ -130,6 +130,30 @@ const Tab = () => {
     }
   };
 
+
+  const handleEdit = ()=>{
+    setCheckDataStatus(false)
+    const fetchTeacherProfile = async () => {
+      try {
+        const response = await axios.get(routes.getSingleTeacherbyToken, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Token}`,
+          },
+        });
+        // Handle the response here
+      
+        setFormData(response.data)
+      } catch (error) {
+        setCheckDataStatus(false)
+        console.error(error);
+      }
+    };
+  
+    fetchTeacherProfile();
+    setTeacherData(formData)
+  }
+
   return (
 
 <div className='shadow-neons 2xl:px-[50px] xl:px-10 xxs:px-5'>
@@ -270,11 +294,10 @@ const Tab = () => {
     </div>
   </form>) : (
     <div className="container mx-auto pt-4 pb-11 px-4">
-    
     {teacherData && (
       <div className="grid grid-cols-1 text-lg md:grid-cols-2 gap-4">
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Full Name:</span>
+          <span className="font-semibold text-xl">Nome completo:</span>
           <span>{teacherData.fullName}</span>
         </div>
         <div className="flex flex-col md:col-span-2">
@@ -282,23 +305,23 @@ const Tab = () => {
           <span>{teacherData.about}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Country:</span>
+          <span className="font-semibold text-xl">Nazione:</span>
           <span>{teacherData.country}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">City:</span>
+          <span className="font-semibold text-xl">Città:</span>
           <span>{teacherData.city}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Address:</span>
+          <span className="font-semibold text-xl">Indirizzo:</span>
           <span>{teacherData.address}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">ZIP Code:</span>
+          <span className="font-semibold text-xl">CAP:</span>
           <span>{teacherData.zipCode}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Phone:</span>
+          <span className="font-semibold text-xl">Cellulare:</span>
           <span>{teacherData.phone}</span>
         </div>
         <div className="flex flex-col">
@@ -306,16 +329,18 @@ const Tab = () => {
           <span>{teacherData.email}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Gender:</span>
+          <span className="font-semibold text-xl">Sesso:</span>
           <span>{teacherData.gender}</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-xl">Date of Birth:</span>
+          <span className="font-semibold text-xl">Data di Nascita:</span>
           <span>{new Date(teacherData.dob).toLocaleDateString()}</span>
         </div>
-        
       </div>
     )}
+    <div className='py-[30px] grid place-items-center'>
+      <button onClick={handleEdit} className='w-[232px] h-[44px] rounded-[3px] bg-light-blue text-whitee text-xl font-normal'>Modifica Informazioni</button>
+    </div>
   </div>
   
   ) }

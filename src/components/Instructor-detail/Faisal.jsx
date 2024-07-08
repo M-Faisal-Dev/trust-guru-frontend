@@ -6,8 +6,8 @@ import Skills from './Skills'
 // import CourseSwiper from './CourseSwiper'
 import CardList from './CardList'
 
-export const Faisal = ({props}) => {
-  console.log(props.biography)
+export const Faisal = ({props, couses}) => {
+  console.log(couses)
   return (
     <div className='xl:px-0 xxs:px-5'>
     <div className='max-w-[1136px] lg:px-[85px] md:px-6 xxs:px-3 pb-[66px] mx-auto rounded-[10px] bg-whitee shadow-neon mt-[40px] mb-[76px]'>
@@ -20,7 +20,7 @@ export const Faisal = ({props}) => {
         <Skills skills = {props.skills}/>
         <MainHeading mainheading='My Courses' />
         <MainParagraph mainparagraph='when known printer took a galley of type scrambl edmake' />
-        <CardList />
+        <CardList course = {couses} />
 
         {/* <CourseSwiper /> */}
     </div>
