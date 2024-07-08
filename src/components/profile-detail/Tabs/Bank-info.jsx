@@ -31,13 +31,15 @@ const BankInfoForm = () => {
         });
 
         // Handle the response here
-        if(response.data){
+        if(response.data.iban){
          setCheckDataStatus(true)
         setBankInfo(response.data)
-
+        }else{
+          setCheckDataStatus(false)
         }
+
       } catch (error) {
-        // Handle the error here
+        setCheckDataStatus(false)
         console.error(error);
       }
     };
