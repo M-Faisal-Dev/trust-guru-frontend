@@ -26,7 +26,6 @@ async function getData() {
 async function getAdditionalData() {
   try {
     const res = await fetch('https://backend.trustyourguru.com/api/course?page=1&limit=4', { cache: 'no-store' });
-    // const res = await fetch('http://localhost:4000/api/course?page=1&limit=4', { cache: 'no-store' });
     return res.json();
   } catch (error) {
     console.error('An error occurred while fetching additional data:');

@@ -4,135 +4,16 @@ import Image from 'next/image';
 import { GoChevronRight } from 'react-icons/go';
 import Link from 'next/link';
 
-const instructors = [
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  // Add more instructor objects as needed
-  // Example data repeated to simulate multiple entries
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  {
-    name: 'Lorenzo Armentano',
-    role: 'UX Design Lead',
-    trustPoints: 192,
-    months: 24,
-    avgScore: 7.1,
-    clients: 27,
-    imageUrl: '/section--link--instructor01png@2x.png'
-  },
-  // Add more entries here to simulate pagination
-];
 
 const itemsPerPage = 10; // Number of items per page
 
-function Instor() {
+function Instor({props}) {
+
+  
+
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(instructors.length / itemsPerPage);
+  const totalPages = Math.ceil(props.length / itemsPerPage);
 
   const handleChangePage = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -140,7 +21,7 @@ function Instor() {
     }
   };
 
-  const currentItems = instructors.slice(
+  const currentItems = props.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -169,37 +50,37 @@ function Instor() {
       <div className='w-11/12 mx-auto'>
         <div className='py-10 space-y-6'>
           {currentItems.map((instructor, index) => (
-            <Link href="instructor/details" key={index} className='flex flex-row mx-auto justify-between px-10 w-full border hover:border-blue rounded-sm p-4 items-center'>
+            <Link href={`instructor/${instructor._id}`} key={index} className='flex flex-row mx-auto justify-between px-10 w-full border hover:border-blue rounded-sm p-4 items-center'>
               <div className='flex flex-row space-x-8'>
-                <div className='bg-slate-200 rounded-full relative w-20 h-20'>
+                <div className='rounded-full relative w-22 h-22'>
                   <Image
                     width={200}
                     height={200}
                     alt="Instructor"
-                    src={instructor.imageUrl}
-                    className="w-22 h-22 rounded-full z-50 absolute top-9 inset-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    src={instructor.profileImage}
+                    className="w-22 h-22 rounded-full z-50 absolute top-11 inset-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   />
                 </div>
                 <div className='flex flex-col justify-center items-start'>
-                  <h3 className='text-gray-900 text-lg font-semibold'>{instructor.name}</h3>
-                  <label className='text-blue text-sm'>{instructor.role}</label>
+                  <h3 className='text-gray-900 text-lg font-semibold'>{instructor.fullName}</h3>
+                  {/* <label className='text-blue text-sm'>{instructor.role}</label> */}
                 </div>
               </div>
               <div className='flex flex-col justify-center items-center'>
                 <h3 className='text-gray-900 text-lg font-semibold'>TRUST POINTS</h3>
-                <label>{instructor.trustPoints}</label>
+                <label>{instructor.totalPoints}</label>
               </div>
               <div className='flex flex-col justify-center items-center'>
                 <h3 className='text-gray-900 text-lg font-semibold'>MONTH</h3>
-                <label>{instructor.months}</label>
+                <label>{instructor.lastMonth}</label>
               </div>
               <div className='flex flex-col justify-center items-center'>
                 <h3 className='text-gray-900 text-lg font-semibold'>AV. SCORE</h3>
-                <label>{instructor.avgScore}</label>
+                <label>{instructor.averageScore}</label>
               </div>
               <div className='flex flex-col justify-center items-center'>
                 <h3 className='text-gray-900 text-lg font-semibold'>N. CLIENTS</h3>
-                <label>{instructor.clients}</label>
+                <label>{instructor.numClients}</label>
               </div>
             </Link>
           ))}

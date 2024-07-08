@@ -27,7 +27,7 @@ export default async function page({ params }) {
     console.error('An error occurred while fetching data:');
     data = []; // Fallback to empty array in case of error
   }
-  console.log(data)
+
   return (
     <div>
       {/* <Nav /> */}
