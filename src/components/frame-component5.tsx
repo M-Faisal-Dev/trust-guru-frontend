@@ -109,7 +109,7 @@ const data = {
               <div className="flex flex-col">
                 <div className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-gray-800">{instructor.fullName}</div>
                 <div className={styles.section48Container}>
-                  <span>(192 TRUST POINTS)</span>
+                  <span>({instructor.totalPoints} TRUST POINTS)</span>
                 </div>
               </div>
             </div>
