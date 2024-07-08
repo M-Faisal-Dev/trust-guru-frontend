@@ -7,6 +7,8 @@ import {handleCoverImageUpload, handleThumbnailImageUpload} from "@/libs/uploadA
 import axios from 'axios';
 import {routes} from "@/libs/api";
 import { useAuth } from '@/Context/AuthContext';
+import {toast} from "react-toastify"
+
 
 function Courselising() {
   const [form, setForm] = useState({
@@ -106,12 +108,26 @@ function Courselising() {
           'Authorization': `Bearer ${Token}`,  // Include token in headers
         },
       });
-      // Handle the response
-      console.log('Response:', response.data);
-      // Continue with further processing if needed
-  
+
+      setForm({
+        courseTitle: "",
+        coverPicture: null,
+        bannerPicture: null,
+        totalPrice: "",
+        weeklyPrice: "",
+        courseDescription: "",
+        studentLearn: "",
+        certificateOption: "",
+        accessOption: "",
+        totalArtical: "",
+        totalLength: "",
+        totalWeeks: "",
+        weeks: [{ weeklyTitle: "", sessions: [{ topic: "", sessionLength: "" }] }],
+      })
+      toast.success("I tuoi dati sono stati inviati con successo");
+
     } catch (error) {
-      console.error("An error occurred:", error);
+      toast.error("Si è verificato un errore durante l'invio dei tuoi dati. Per favore, riprova.");
       // Handle the error appropriately, e.g., show an error message to the user
     }
   };
