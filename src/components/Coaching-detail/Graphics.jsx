@@ -306,7 +306,7 @@ Se il coach non rispetta il programma, potrai richiedere indietro i soldi spesi 
         <div className='flex flex-col gap-[5px]'>
           <label className='text-light-skyblue text-xl font-normal uppercase'>SKILLS</label>
           <input
-            type='text'
+            type='Number'
             className='bg-whitee shadow-neons rounded-[2px] px-5 md:h-[60px] xxs:h-[45px]'
             placeholder='--/10'
             value={skills}
@@ -316,7 +316,7 @@ Se il coach non rispetta il programma, potrai richiedere indietro i soldi spesi 
         <div className='flex flex-col gap-[5px]'>
           <label className='text-light-skyblue text-xl font-normal uppercase'>PASSION</label>
           <input
-            type='text'
+            type='Number'
             className='bg-whitee shadow-neons rounded-[2px] px-5 md:h-[60px] xxs:h-[45px]'
             placeholder='--/10'
             value={passion}
@@ -326,7 +326,7 @@ Se il coach non rispetta il programma, potrai richiedere indietro i soldi spesi 
         <div className='flex flex-col gap-[5px]'>
           <label className='text-light-skyblue text-xl font-normal uppercase'>COMMITMENT</label>
           <input
-            type='text'
+            type='Number'
             className='bg-whitee shadow-neons rounded-[2px] px-5 md:h-[60px] xxs:h-[45px]'
             placeholder='--/10'
             value={commitment}
@@ -336,7 +336,7 @@ Se il coach non rispetta il programma, potrai richiedere indietro i soldi spesi 
         <div className='flex flex-col gap-[5px]'>
           <label className='text-light-skyblue text-xl font-normal uppercase'>RESULTS</label>
           <input
-            type='text'
+            type='Number'
             className='bg-whitee shadow-neons rounded-[2px] px-5 md:h-[60px] xxs:h-[45px]'
             placeholder='--/10'
             value={results}
