@@ -46,7 +46,7 @@ const Graphics = ({data}) => {
 
 
   const Token = getRefreshToken()
-  console.log(Token, "this is token")
+ 
 
   const handleWeeklyPlan = async (id) => {
     try {
@@ -108,13 +108,15 @@ const Graphics = ({data}) => {
 
     try {
       // Prepare data object to be sent
+      
       const formData = {
-        skills,
-        passion,
-        commitment,
-        results,
+        skills: Number(skills),
+        passion: Number(passion),
+        commitment: Number(commitment),
+        results: Number(results),
         comment
       };
+  
 
       const response = await axios.put(
         `${routes.createandUpdatePoints}/${data._id}`,
