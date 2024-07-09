@@ -1,0 +1,21 @@
+
+
+ 
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 100%;
+  }
+  
+
+  ::ng-deep .swiper-button-prev:after,
+  ::ng-deep .swiper-button-next:after {
+      font-size: 20px;
+  }
