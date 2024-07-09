@@ -14,7 +14,8 @@ export const routes = {
     findEmail: `${api}find-email`,
     resetPassword: `${api}reset-password`,
     getSingleUser: `${api}single-user`,
-
+    checkCoursePurchase: `${api}check-user`,
+   
     // for creating course 
     createCourse: `${api}course/create`,
     course: `${api}course`,

@@ -102,6 +102,29 @@ const Graphics = ({data}) => {
   const [commitment, setCommitment] = useState('');
   const [results, setResults] = useState('');
   const [comment, setComment] = useState('');
+  // checkCoursePurchase
+
+
+  const checkPurchasedCourse = async () =>{
+    try {
+      const response = await axios.get(
+        `${routes.checkCoursePurchase}/${data._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
+      );
+      
+      return response.data.found
+    } catch (error) {
+      console.error('Error checking purchased course', error);
+      return false
+    }
+  }
+
+
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -116,8 +139,9 @@ const Graphics = ({data}) => {
         results: Number(results),
         comment
       };
-  
-
+     const getres = await checkPurchasedCourse()
+     
+     if(getres){
       const response = await axios.put(
         `${routes.createandUpdatePoints}/${data._id}`,
         {
@@ -125,7 +149,7 @@ const Graphics = ({data}) => {
         }
        
       );
-      toast.success('Review submitted successfully!');
+      toast.success('Recensione inviata con successo!');
 
       // Reset form fields after submission (if needed)
       setSkills('');
@@ -133,10 +157,12 @@ const Graphics = ({data}) => {
       setCommitment('');
       setResults('');
       setComment('');
+     }else{
+      toast.error('Non hai ancora acquistato questo corso, acquistalo prima');
+     }
+     
     } catch (error) {
-      // Handle error
-      console.error('Error submitting review:', error);
-      toast.error('Failed to submit review.');
+      toast.error('Impossibile inviare la recensione.');
     }
   };
 

@@ -41,7 +41,6 @@ const FrameComponent3 = ({props}: any) => {
       ))}
       
    
-    )
     
   
        

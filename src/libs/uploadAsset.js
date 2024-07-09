@@ -1,5 +1,4 @@
 import axios from 'axios';
-// const root = 'http://localhost:4000/api';
 const root = 'https://backend.trustyourguru.com/api';
 
 const handleProfileImageUpload = async (image) => {
