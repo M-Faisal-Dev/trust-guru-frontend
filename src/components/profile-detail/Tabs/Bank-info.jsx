@@ -53,7 +53,31 @@ const BankInfoForm = () => {
     setBankInfo({ ...bankInfo, [name]: value });
   };
 
-  
+
+  const fetchTeacherProfile = async () => {
+    try {
+      const response = await axios.get(routes.getSingleUser, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${Token}`,
+        },
+      });
+
+      // Handle the response here
+      if(response.data.iban){
+       setCheckDataStatus(true)
+      setBankInfo(response.data)
+      }else{
+        setCheckDataStatus(false)
+      }
+
+    } catch (error) {
+      setCheckDataStatus(false)
+      console.error(error);
+    }
+  };
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,7 +97,8 @@ const BankInfoForm = () => {
           accNumber: '',
         })
         toast.success("I tuoi dati sono stati inviati con successo");
-        window.location.reload();
+        fetchTeacherProfile();
+  
       
     } catch (error) {
       toast.error("Si è verificato un errore durante l'invio dei tuoi dati. Per favore, riprova.");

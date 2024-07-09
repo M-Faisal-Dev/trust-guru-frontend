@@ -75,6 +75,30 @@ const Biography = () => {
   }, [Token]);
 
 
+  const fetchTeacherProfile = async () => {
+    try {
+      const response = await axios.get(routes.getSingleTeacherbyToken, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${Token}`,
+        },
+      });
+      if(response.data.biography){
+        setCheckDataStatus(true)
+        setTeacherData(response.data)
+      }else{
+        setCheckDataStatus(false)
+      }
+    
+     
+    } catch (error) {
+      // Handle the error here
+      console.error(error);
+    }
+  };
+
+ 
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,7 +112,7 @@ const Biography = () => {
       });
 
       toast.success("I tuoi dati sono stati inviati con successo");
-        window.location.reload();
+      fetchTeacherProfile();
     } catch (error) {
       console.log(error)
       toast.error("Si è verificato un errore durante l'invio dei tuoi dati. Per favore, riprova.");
@@ -97,6 +121,7 @@ const Biography = () => {
   };
 
 
+ 
 
   const handleEdit = ()=>{
     setCheckDataStatus(false)

@@ -5,7 +5,7 @@ import Navbar from "@/components/Instructor-detail/Nav";
 import Footer from "@/components/Footer";
 import { ToastContainer } from 'react-toastify';
 import { AuthProvider} from "@/Context/AuthContext";
-
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 

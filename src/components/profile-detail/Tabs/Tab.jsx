@@ -12,6 +12,7 @@ const Tab = () => {
     fullName: '',
     profileImage: '',
     about: '',
+    profession: '',
     country: '',
     city: '',
     address: '',
@@ -25,6 +26,7 @@ const Tab = () => {
     fullName: '',
     profileImage: '',
     about: '',
+    profession: '',
     country: '',
     city: '',
     address: '',
@@ -86,6 +88,28 @@ const Tab = () => {
   };
 
 
+  const fetchTeacherProfile = async () => {
+    try {
+      const response = await axios.get(routes.getSingleTeacherbyToken, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${Token}`,
+        },
+      });
+      // Handle the response here
+      if(response.data){
+        setCheckDataStatus(true)
+        setTeacherData(response.data)
+      }
+     
+    } catch (error) {
+      setCheckDataStatus(false)
+      console.error(error);
+    }
+  };
+
+ 
+
 
 
   const handleSubmit = async (e) => {
@@ -113,6 +137,7 @@ const Tab = () => {
         profileImage: '',
         about: '',
         country: '',
+        profession: '',
         city: '',
         address: '',
         zipCode: '',
@@ -122,10 +147,10 @@ const Tab = () => {
         dob: '',
       })
 
-      toast.success("Your data has been submit successfully")
-      window.location.reload();
+      toast.success("I tuoi dati sono stati inviati con successo");
+      fetchTeacherProfile();
     } catch (error) {
-      console.error('An error occurred:', error);
+      toast.error("Si è verificato un errore durante l'invio dei tuoi dati. Per favore, riprova.");
       // Handle the error appropriately
     }
   };
@@ -221,6 +246,10 @@ const Tab = () => {
       ></textarea>
     </div>
     <div className='flex sm:flex-row xxs:flex-col sm:items-center sm:gap-0 xxs:gap-2 justify-between mt-4'>
+      <Label labeltext='la tua professione' />
+      <Input name="profession" value={formData.profession} onChange={handleChange} placeholder='UI&UX Designing' />
+    </div>
+    <div className='flex sm:flex-row xxs:flex-col sm:items-center sm:gap-0 xxs:gap-2 justify-between mt-4'>
       <Label labeltext='Nazione' />
       <Input name="country" value={formData.country} onChange={handleChange} placeholder='Pakistan' />
     </div>
@@ -303,6 +332,10 @@ const Tab = () => {
         <div className="flex flex-col md:col-span-2">
           <span className="font-semibold text-xl">About:</span>
           <span>{teacherData.about}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-xl">la tua professione:</span>
+          <span>{teacherData.profession}</span>
         </div>
         <div className="flex flex-col">
           <span className="font-semibold text-xl">Nazione:</span>

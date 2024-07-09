@@ -3,9 +3,10 @@ import { Open_Sans } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Instructor-detail/Nav";
 import Footer from "@/components/Footer";
-import { ToastContainer } from 'react-toastify';
-import { AuthProvider} from "@/Context/AuthContext";
 
+import { AuthProvider} from "@/Context/AuthContext";
+import { ToastContainer} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
